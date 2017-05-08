@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class1.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class2.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class3.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class4.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class5.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class6.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class7.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class8.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class1.png" alt="">
+    <img src="default.jpg" data-src="http://onjxynams.bkt.clouddn.com/class2.png" alt="">
+
+ <script src="jquery.min.js"></script>
+ <script>
+       var n=0;
+       imgNum=$("img").length;
+       img=$("img");
+       lazyload();
+       $(window).scroll(lazyload);
+       function lazyload(event){
+            for(var i=n; i<imgNum;i++){
+                 if(img.eq(i).offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())){
+                       if(img.eq(i).attr("src")=="default.jpg"){
+                             var src=img.eq(i).attr("data-src");
+                             var a=img.eq(i).attr('src',src);
+                             a.animate({'opacity':'1'},300); 
+                             n=i+1;
+                       }
+                 }
+            }
+       }
+
+
+ </script>
+</body>
+
+</html>
