@@ -1,0 +1,147 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+/*按钮部分*/
+ #div1 {
+    width: 52px;
+    height: 28px;
+    border-radius: 26px;
+    position: relative; 
+    float: right;
+    top:3px;
+    right:5px;
+        }
+        
+        #div2 {
+           width: 29px;
+           height: 24px;
+           border-radius: 14px;
+           position: absolute;
+           background: white;
+           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        
+        .open1 {
+            background: rgba(0, 184, 0, 0.8);
+        }
+        
+        .open2 {
+            top: 2px;
+            right: 1px;
+        }
+        
+        .close1 {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-left: transparent;
+        }
+        
+        .close2 {
+            left: 0px;
+            top: 0px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+    .header{
+         height: 35px;
+         border-bottom:1px solid gray;
+         color:red;
+         font-size:19px;
+         line-height:35px;
+         font-weight: 600;
+        
+    }
+    .header span{
+        margin-left:10px;
+    }
+    .nav{
+        height: 50px;
+        line-height: 50px;
+        font-size:17px;
+        padding-left:10px;
+    }
+
+    .tig{
+        height: 30px;
+        line-height: 35px;
+        padding-left:10px;
+        border-top: 1px solid gray;
+        
+    }
+    .tig .title{
+        float:left;
+     
+        font-size: 15px;
+    }
+    .tig input{
+        width: 30px;
+        text-align:center;
+        margin:0 2px;
+    }
+
+    .btn{
+        width: 80px;
+        height: 25px;
+        background-color: red;
+        color:#fff;
+        border:none;
+        line-height: 25px;
+        text-align:center;
+       border-radius: 5px;
+     position:absolute;
+     right:0;
+     margin-right:10px;
+     margin-top:15px;
+    }
+
+    .popup,.popup_no,.no_bind{
+          height: 100px;
+          width: 150px;
+          background-color: #fff;
+          border-radius: 5px;
+          margin:80px auto;
+          color:#fff;
+          /*opacity: 0;*/
+          display: none;
+          /*background-color: red;*/
+          background-color: rgba(0,0,0,0.3);
+    }
+     .win,.win_no,.no_bind_s{
+        /*height: 100px;*/
+        text-align: center;
+        line-height: 100px;
+        font-size:18px;
+        color:#fff;
+        font-family: 微软雅黑;
+    }
+ 
+
+  /*弹窗部分*/
+      /* rem [[ */
+html {font-size: 10px;}
+@media (min-width: 320px) and (max-width: 359px) and (min-height: 503px){html {font-size: 10px;}}
+@media (min-width: 360px) and (max-width: 413px) and (min-height: 566px){html {font-size: 11px;}}
+@media (min-width: 414px) and (max-width: 479px) and (min-height: 651px){html {font-size: 12px;}}
+@media (min-width: 448px) and (max-width: 539px) and (min-height: 705px){html {font-size: 14px;}}
+@media (min-width: 540px) and (max-width: 719px) and (min-height: 849px){html {font-size: 16px;}}
+@media (min-width: 720px) and (max-width: 1079px) and (min-height: 1132px){html {font-size: 22px;}}
+@media (min-width: 1080px) and (min-height: 1698px) {html {font-size: 33px;}}
+/* rem ]] */
+.poplayer{display:none;position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.4);z-index: 99;}
+/*.poplayer{position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.4);z-index: 99;}*/
+.poplayer .popmain{position:relative;width: 21rem;padding: 0 1.6rem;background: #fff;border-radius: 3px;top: 22%;margin:0 auto;}
+.poplayer .poplayer-close{right: -16px;top: -16px;}
+.poplayer .popdesc{font-size: 1.1rem;line-height: 2.8rem;}
+.poplayer.show{display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;-webkit-box-align:center;}
+
+.poplayer-bindaccount .popmain{padding: 14rem 1.7rem 2.3rem;}
+.poplayer-bindaccount .popmain{background:url(../img/poplayer_bindaccount.png) no-repeat;background-size: 100% auto;}
+.layer{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:99;}
+.layer-main{position:absolute;left:50%;top:50%;width:27rem;-webkit-transform:translate(-50%, -50%) translateZ(0);transform:translate(-50%, -50%) translateZ(0);background-color:#fff;text-align:center;border-radius:4px;font-size:1.6rem;}
+.layer-line{line-height:3rem;padding:2rem 0;}
+.layer-btn{display:block;height:4.4rem;line-height:4.4rem;border-top:1px solid #e1e1e1;color:#54A3F5;}
+.poplayer-close{position:absolute;right:-6px;top:-6px;width:32px;height:32px;background:url(../img/ico_close.png) center no-repeat;background-size:20px;}
+.layer.show{display:block;}
+.btns{display:block; background-color: red;text-align:center;line-height:40px;height: 40px;width: 80%;border-radius: 5px;margin: 0 auto;text-decoration: none;font-size:18px;color:#fff;    position: absolute;bottom: 10%;left: 50%;margin-left: -40%;}

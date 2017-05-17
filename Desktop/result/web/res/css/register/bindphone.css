@@ -1,0 +1,17 @@
+.bindphone .container{padding:5rem 1rem;-webkit-box-sizing:border-box;box-sizing:border-box}.bindphone .btn-close{position:absolute;right:0;top:0;width:4rem;height:4rem;background:url(../../img/global/ico_close_gray.png) center no-repeat;background-size:2.2rem auto}.bindphone .result{display:none;padding-top:5.4rem}.bindphone .title{font-size:1.7rem;color:#202020;line-height:2.8rem;text-align:center;margin-top:-2rem}.bindphone.show-result .container{display:none}.bindphone.show-result .result{display:block}.bindphone.show-result .ico-ok{height:24.2rem;background:url(../../img/register/bindphone_ok.png) center no-repeat;background-size:24.3rem auto}
+.bindphone .ftoor{height: 50px;line-height: 50px;}
+.bindphone .ftoor span{font-size:15px; color:gray;}
+.bindphone .ftoor a{display: block; float:right;color:red;text-align: center;font-weight: 500; width: 100px;height: 30px;margin-top: 10px;line-height: 30px;font-family: -webkit-pictograph;}
+.bindphone{position:relative;width: 100%;}
+.bindphone .bind_ok{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    top:0;
+    display:none;
+}
+.bindphone .bind_ok img{
+     width: 100%;
+     height: 100%;
+}

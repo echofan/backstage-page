@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv" />
+    <title>先机鹰眼播报</title>
+    <link rel="stylesheet" type="text/css" href="../res/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/hawkeye/hawkeye.css?v=1">
+
+<body class="index">
+<div class="container">
+    <div class="nosubscribe hide" id="noSubscribe">
+
+        <img data-src="../res/img/hawkeye/yybb_picture_01.jpg" width="100%" alt=""/>
+
+        <img data-src="../res/img/hawkeye/yybb_picture_02.jpg" width="100%" alt=""/>
+
+        <img data-src="../res/img/hawkeye/yybb_picture_03.jpg" width="100%" alt=""/>
+
+        <img data-src="../res/img/hawkeye/yybb_picture_04.jpg" width="100%" alt=""/>
+
+        <div class="btn-line" id="nosubscribeBtn"></div>
+    </div>
+    <div class="subscribe hide" id="subscribe">
+        <div class="section section1">
+            <div class="broadcast" id="broadcast">
+                <!--<div class="logo">-->
+                    <!--<p class="logo-date">2016年10月17日</p>-->
+                <!--</div>-->
+                <!--<div class="line">-->
+                    <!--<span class="line-title">市场信号</span><span class="signal">强势</span><span class="signal">强势转弱</span><span class="signal">弱势</span><span class="signal bg-red">弱势转强</span>-->
+                <!--</div>-->
+                <!--<div class="line">-->
+                    <!--<span class="line-title">未来短期内大盘</span><span class="signal bg-red">上涨</span><span class="line-title1">概率</span><span class="per red">87.34<span class="unit">%</span></span>-->
+                <!--</div>-->
+                <!--<div class="line">-->
+                    <!--<span class="line-title">操作建议</span><span class="signal bg-red">买入并持有</span>-->
+                <!--</div>-->
+            </div>
+            <div class="probability-desc flex flex-h-justify">
+                <div>
+                    <span class="ico bg-red"></span>&gt;60%上涨概率
+                </div>
+                <div>
+                    <span class="ico bg-yellow"></span>40%-60%上涨概率
+                </div>
+                <div>
+                    <span class="ico bg-green"></span>&lt;40%上涨概率
+                </div>
+            </div>
+            <div class="probability-list">
+                <ul id="probability">
+                    <!--<li class="probability-li flex-1">-->
+                        <!--<div class="ico bg-red"></div>-->
+                        <!--<p class="desc gray">3.1</p>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="section section2 border-bottom border-top">
+
+            <div class="title flex flex-h-justify flex-h-vcenter border-bottom">
+                <div>鹰眼板块掘金今日推荐</div>
+                <p class="desc gray"><span class="ico-star"></span>板块分类使用同花顺数据</p>
+            </div>
+
+            <div class="subtitle">近期上涨概率较大板块</div>
+            <div class="plate">
+                <ul class="clearfix" id="block">
+
+                </ul>
+            </div>
+
+
+
+        </div>
+
+        <div class="intro">大数据量化模型精准捕捉大盘涨跌趋势，历史回测准确率超过<span class="font-18">80</span>%</div>
+
+    </div>
+</div>
+
+
+
+
+<!--　　弹窗——未绑定账号　[[　-->
+
+<div class="poplayer poplayer-bindaccount" id="popBindAccount"><!--需要展示加class "show"-->
+
+    <div class="popmain">
+
+        <a class="poplayer-close js-tap" data-handler="closeLayer" href="javascript:;"></a>
+
+        <a class="btn btn-red" href="../register/bindphone.html">绑定账号</a>
+
+    </div>
+
+</div>
+
+<!--　　弹窗——未绑定账号　]]　-->
+
+
+<script id="broadcast-template" type="text/html">
+    <div class="logo">
+        <p class="logo-date">{{ newDate }}</p>
+    </div>
+    <div class="line">
+        <span class="line-title">市场信号</span>
+        {{ if signal == '强势'}}
+            <span class="signal bg-red">强势</span><span class="signal">强势转弱</span><span class="signal">弱势</span><span class="signal">弱势转强</span>
+        {{ else if signal == '强势转弱'}}
+            <span class="signal">强势</span><span class="signal bg-yellow">强势转弱</span><span class="signal">弱势</span><span class="signal">弱势转强</span>
+        {{ else if signal == '弱势'}}
+            <span class="signal">强势</span><span class="signal">强势转弱</span><span class="signal bg-yellow">弱势</span><span class="signal">弱势转强</span>
+        {{ else if signal == '弱势转强'}}
+            <span class="signal">强势</span><span class="signal">强势转弱</span><span class="signal">弱势</span><span class="signal bg-red">弱势转强</span>
+        {{ /if}}
+    </div>
+    <div class="line">
+        {{ if flag>0 }}
+        <span class="line-title">未来短期内大盘</span><span class="signal signal1 bg-red">上涨</span><span class="line-title1">概率</span><span class="per red">{{ numToPercent(probability) }}<span class="unit">%</span></span>
+        {{ else }}
+        <span class="line-title">未来短期内大盘</span><span class="signal signal1 bg-green">下跌</span><span class="line-title1">概率</span><span class="per green">{{ numToPercent(probability) }}<span class="unit green">%</span></span>
+        {{ /if }}
+
+    </div>
+    <div class="line">
+        <span class="line-title">操作建议</span><span class="signal {{ if signal == '强势' || signal == '弱势转强' }}bg-red{{ else }}bg-yellow{{ /if }}">{{ operate }}</span>
+    </div>
+</script>
+
+<script id="probability-template" type="text/html">
+    {{each data as pro i}}
+    <li class="probability-li">
+        {{ if pro.probability > 0.6 }}
+        <div class="ico bg-red"></div>
+        {{ else if pro.probability >= 0.4}}
+        <div class="ico bg-yellow"></div>
+        {{ else}}
+        <div class="ico bg-green"></div>
+        {{/if}}
+        <p class="desc gray">{{ shortDate(pro.date) }}</p>
+    </li>
+    {{/each}}
+</script>
+
+<script id="block-template" type="text/html">
+    {{each bkdata as bk i}}
+        {{if bk.blockid}}
+        <li class="plate-li">
+            <a href="blocklist.html?action=block&id={{ bk.blockid }}" class="plate-a">
+                <div class="plate-title {{ colors[i] }}">{{ bk.blockname }}</div>
+                <p class="plate-desc">点击查看</p>
+            </a>
+        </li>
+
+        {{else}}
+        <li class="plate-li">
+            <a href="blocklist.html?action=industry&id={{ bk.Industryid }}" class="plate-a">
+                <div class="plate-title {{ colors[i] }}">{{ bk.industryname }}</div>
+                <p class="plate-desc">点击查看</p>
+            </a>
+        </li>
+
+        {{/if}}
+    {{/each}}
+</script>
+
+
+<script type="text/javascript" src="../res/js/libs/zepto.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+
+<script type="text/javascript" src="../res/js/libs/sea.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        // Sea.js 的基础路径
+        base: '/gzh/nxb/web/res/js/',
+        alias: {
+            'global': 'global.js?20160630',
+
+            'hawkeye/index': 'hawkeye/index.js?20160705'
+
+        }
+    });
+    //加载多个模块，在加载完成时，执行回调
+    seajs.use(['global', 'hawkeye/index'], function(global, index) {
+        index.init();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv" />
+    <title>拉吸信号</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <span>自选股拉吸信号提醒设置</span>
+        </div>
+        <div class="nav">
+            拉吸方式:
+            <input type="checkbox" class="app_push">App提醒
+            <input type="checkbox" class="wx_push">微信提醒
+        </div>
+        <div class="tig">
+            <div class="title">
+                前<input id="stockcount" type="text" class="ipt"> 只自选股出现拉信号时提醒
+            </div>
+            <div id="div1" class="open1">
+                <div id="div2" class="open2"></div>
+            </div>
+        </div>
+        <button class="btn">提交</button>
+        <!--弹窗-->
+        <div class="popup">
+            <div class="win">提交成功</div>
+        </div>
+        <div class="popup_no">
+            <div class="win_no">提交失败</div>
+        </div>
+         <div class="no_bind">
+            <div class="no_bind_s">对不起，没有绑定</div>
+        </div>
+    </div>
+    <!--　　弹窗——未绑定账号　[[　-->
+    <div class="poplayer poplayer-bindaccount" id="popBindAccount">
+       
+        <div class="popmain">
+           <a class="poplayer-close js-tap" data-handler="closeLayer" href="javascript:;"></a>
+            <a class="btns btn-red" href="http://wx.gupiaoxianji.com/auth/indexcallbackbind/">绑定账号</a>
+        </div>
+    </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/index.js"></script>
+</body>
+
+</html>

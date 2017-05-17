@@ -1,0 +1,135 @@
+/* 基金首页(index.html)
+------------------------------ */
+.index .banner{position: relative;width: 100%;overflow: hidden;}
+.index .banner-ul{-webkit-transition: all 1s;transition: all 1s;width:500%;}
+.index .banner-li{float: left;}
+.index .banner-tab{position: absolute;left: 50%;bottom: 0;z-index: 10;-webkit-transform: translateX(-50%);transform: translateX(-50%);}
+.index .banner-tab li{display:inline-block;color: rgba(255,255,255,0.5);font-size: 3rem;line-height: 2rem;}
+.index .banner-tab .on{color: rgba(255,255,255,1);}
+.index .li{margin-bottom: 1.5rem;background: #FFFFFF;}
+.index .li-hd{position: relative;padding: 1.5rem 1rem 1.6rem;}
+.index .li-hd:after{content:'';position:absolute;top:1.8rem;bottom:1.8rem;border-left:1px solid #c8c7cc;left:45%;width:0;-webkit-transform:scaleX(.5);-webkit-transform-origin:0 0;z-index:2;}
+.index .li-title{font-size: 1.2rem;line-height: 2rem;color: #96989c;}
+.index .li-desc{font-size: 1.2rem;line-height: 1.6rem;color: #96989c;}
+.index .li .arrow-down{position: absolute;right: 1rem;top: 2rem;width:1.9rem;height:1.9rem;}
+.index .li .red, .index .li .green, .index .li .gray{padding-left: 0.6rem;}
+.index .li-title .red, .index .li-title .green{font-size: 2.9rem;}
+.index .li-title .float{font-size: 1.7rem;}
+.index .li-item0 .li-title{padding: 1rem 0 1rem;}
+.index .li-item1 .li-title{font-size: 1.4rem;color: #202020;padding-bottom: 0.1rem;}
+.index .li-tips{height: 1.8rem;line-height: 1.8rem;padding-bottom: 0.6rem;}
+.index .li-tips .tips{display: inline-block;color: #fff;font-size: 1.2rem;padding: 0 0.8rem;border-radius: 0.9rem;}
+.index .li-bd{display:none;overflow: hidden;}
+.index .li-bd .tab{padding-bottom: 1.3rem;}
+.index .li-bd .tab-a{position:relative;display: inline-block;width: 3.8rem;text-align: center;height: 1.8rem;line-height:1.8rem;background: #fff;color: #a6aabd;}
+.index .li-bd .tab-a:before{content: '';position: absolute;left: 50%;top: 50%;width: 200%;border-radius:0;height: 200%;border:1px solid #a6aabd;-webkit-transform: translate(-50%, -50%) scale(0.5);transform: translate(-50%, -50%) scale(0.5);pointer-events:none;}
+.index .li-bd .tab-a.on{background: #a6aabd;color: #fff;}
+.index .li-bd .colors{position: absolute;right: 1rem;top: 1rem;}
+.index .li-bd .colors-desc{padding-left: 2.4rem;line-height: 1.6rem;white-space: nowrap;}
+.index .li-bd .colors-color{float: left;width: 1.9rem;height: 0.4rem;margin: 0.4rem 0 0 -2.4rem;}
+.index .li-bd .p{background: #f0f4fa;color: #747bba;line-height: 1.8rem;font-size: 1.1rem;padding: 0.7rem 1.2rem;}
+.index .btn-line{padding-top: 2rem;}
+.index .on .li-bd{display: block;padding: 1.9rem 1rem;}
+.index .on .arrow-down{-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+.index .hawkeye{position: fixed;right:2.5rem;bottom:2.5rem;width: 4.2rem;height: 4.2rem;background: url("../../img/fund/index_hawkeye.png") no-repeat;background-size: 100%;box-shadow: 0 0 0 0.5rem #fac661, 0 0 0 1rem rgba(250,198,97, 0.5);border-radius: 4.7rem;z-index: 99;}
+
+
+.poplayer-subscribe .popmain{padding: 7rem 1rem 1.8rem;text-align: center;}
+.poplayer-subscribe .popline{font-size: 2.3rem;line-height: 3.7rem;color: #f35833;}
+.poplayer-subscribe.show .popmain{background: #fff url("../../img/fund/poplayer_subscribe_title.png") no-repeat;background-size: 100% auto;}
+
+
+
+/* 基金详情(detail.html)
+------------------------------ */
+.detail .container{padding-bottom: 1px;}
+.detail .tips{padding: 1.2rem 1rem 1.1rem;font-size: 1.2rem;color: #202020;line-height: 1.8rem;background: #fff;margin-bottom: 1.5rem;}
+.detail .about{font-size: 1.3rem;background: #fff;padding: 0 0 0.7rem;margin-bottom: 1.5rem;}
+.detail .about .gray{padding-right: 0.6rem;}
+.detail .about-info1{padding: 2.2rem 1rem 0;}
+.detail .about-info2{margin-bottom: 0.8rem;background: #F1F4FB;height: 2.3rem;line-height: 2.3rem;padding: 0 1rem;}
+.detail .operating-list, .detail .holding-list{background: #fff;margin-bottom: 1.5rem;}
+.detail .operating-list .gray{padding-left: 0.8rem;}
+.detail .operating-list .more{float: right;height: 3.9rem;line-height: 3.9rem;margin-top: -3.9rem;font-size: 1.2rem;}
+.detail .operating-list-hd, .detail .holding-list-title{height: 4rem;line-height: 4rem;padding: 0 1rem;font-size: 1.5rem;}
+.detail .operating-list .table{font-size: 1.5rem;}
+.detail .operating-list td{padding: 0 1rem;height: 6.5rem;}
+.detail .operating-list .ico-buy, .detail .operating-list .ico-sale{display: inline-block;width: 2.1rem;height: 2.1rem;margin-right:1rem;border-radius: 1.1rem;text-align: center;color: #fff;vertical-align: middle;}
+.detail .operating-list .ico-buy{background: #FD4344;}
+.detail .operating-list .ico-sale{background: #1AAC0B;}
+.detail .holding-list th{font-size: 1.3rem;color: #96989c;font-weight: normal;height: 3.5rem;line-height: 3.5rem;text-align: left;padding:0 1rem;}
+.detail .holding-list td{padding: 0 1rem;height: 6.5rem;font-size: 1.3rem;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.detail .holding-list .gray{font-size: 1.1rem;padding-top: 0.4rem;}
+.detail .holding-list .col1{width: 22%;}
+.detail .holding-list .col2{width: 30%;}
+.detail .holding-list .col3{width: 28%;}
+.detail .holding-list .col4{}
+.detail .arrow-right{margin-left: 0.3rem;vertical-align: -0.1rem;}
+.detail .canvas{text-align: center;padding-top: 1rem;}
+.detail .btn-line{padding: 0 1rem 1.5rem;}
+
+
+/* 调仓历史(position.html)
+------------------------------ */
+.operation .list{}
+.operation .li{margin-bottom: 1.5rem;background: #fff;}
+.operation .li-hd{line-height: 4rem;height: 4rem;padding: 0 1rem;font-size: 1.5rem;color: #202020;}
+.operation .li-hd .gray{font-size: 1.3rem;}
+.operation .li-hd .arrow-down{display:inline-block;width: 1.4rem;height: 1.4rem;margin-left:0.8rem;vertical-align: -0.2rem;-webkit-transition:all 1s;transition:all 1s;-webkit-transform-origin:50% 50%;transform-origin:50% 50%;}
+.operation .table{display:none;font-size: 1.5rem;}
+.operation .table .col1{padding-left: 4.1rem;}
+.operation .table .gray{font-size: 1.1rem;padding-top: 0.4rem;}
+.operation td{padding: 0 1rem;height: 6.5rem;}
+.operation .ico-buy, .operation .ico-sale{float:left;margin: 0.5rem 0 0 -3.1rem;width: 2.1rem;height: 2.1rem;margin-right:1rem;border-radius: 1.1rem;text-align: center;color: #fff;}
+.operation .ico-buy{background: #FD4344;}
+.operation .ico-sale{background: #1AAC0B;}
+.operation .li.on .table{display: block;}
+.operation .li.on .arrow-down{-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+
+
+/* 订阅基金(pay.html)
+------------------------------ */
+.pay {}
+.pay .tips{padding: 0 1rem;line-height:5.5rem;height:5.5rem;font-size: 1.5rem;color: #202020;background: #fff;margin-bottom: 1.5rem;}
+.pay .line{margin-bottom: 1.5rem;background: #fff;height: 5.5rem;line-height: 5.5rem;padding: 0 1rem;}
+.pay .line-lab{font-size: 1.3rem;color: #96989c;padding-right: 0.7rem;}
+.pay .line-cnt{height: 100%;}
+.pay .tab-line{height: 100%;}
+.pay .tab-a{position: relative;display: block;height: 2.3rem;line-height:2.3rem;color: #202020;font-size: 1.1rem;padding: 0 0.7rem 0 2rem;}
+.pay .tab-a:before{content: '';position: absolute;left: 50%;top: 50%;width: 200%;border-radius:0;height: 200%;border-radius:4px;border:1px solid #a6aabd;-webkit-transform: translate(-50%, -50%) scale(0.5);transform: translate(-50%, -50%) scale(0.5);pointer-events:none;}
+.pay .tab-a:after{content: '';position: absolute;left:0.5rem;top: 50%;margin-top: -0.6rem;width: 1.1rem;height: 1.1rem;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWBAMAAAA2mnEIAAAAG1BMVEX////c3+P4+vvm5+r09ffw8fPr7O/g4ub7/PwFs4soAAAAlklEQVQY01WPuw7CMAxFDymFjKRQylgUtXQEJGBN/wCJH2CpYOSxMPLpxFUjlOvBR7ZlXwPUp+JY0svmja7mX8FxDpAuAFpHSEoK0s4gOaNvxR0uYGFjjHEkJR3q6flFemXPxHgtUVs+TIULmPkYGVHPoa4f0XyHFl7JHgvtsD+6q7Lg5+9z7Yj9Yw8N1Xt4st4Z/2+sHwTBEmPyfVtoAAAAAElFTkSuQmCC") no-repeat;background-size: 100%;}
+.pay .tab-a.on{color: #FF3E2D;}
+.pay .tab-a.on:before{border-color: #FF3E2D;}
+.pay .tab-a.on:after{background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAAP1BMVEX/////Oyz/Rjb/qKD/2Nb/5+X/UEP/ycT/YVb/wr//k4r/ioL/8/P/4t/+eG//cmj/ZVn+7On+1tD/+Pn8ysMpSPdPAAAAo0lEQVQY031R2xaEIAjklvfKav//WxfTNfccT/OAAwLiABUSskGTg8CAZUM+j+s4GbelRz/EnTPZxjz6xkZvbfdP7VqOne/2UZ+Md2PeywyuUEtYUAudAAQuuYQVVPI5AORTScQfYmtgDlDTw0a9RAB4gZoHoFBDaZqdZdp7Psl87vkvZ5pYWptmdox2Pf2f3n7YjmNJkIRd207fpSMkFwRe8QU6yQTBafl+KgAAAABJRU5ErkJggg==") no-repeat;background-size: 100%;}
+.pay .price-line{font-size: 1.3rem;}
+.pay .price-line .red{font-size: 1.8rem;color: #ff4342;}
+.pay .price-line .price{padding-right: 0.4rem;}
+.pay .price-line .price>span{padding-right: 0.4rem;}
+.pay .discount{font-size: 1.5rem;color: #ff7647;}
+.pay .ico-wxpay{display: inline-block;width: 1.6rem;height: 1.4rem;margin-right:0.4rem;vertical-align: -0.3rem;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAcCAMAAAA3HE0QAAAAYFBMVEUZrgj///8kshU2uCif3Zf5/vfy+/IcqQzd9NrP7suo4KST2Y1myVvX8dWv5KmL1YKE03puy2NPwENKwD4rsxzo9uTj9eKz5a5CvDYutSHB6r6Z2pJaxU686bdex1Pj7+Fp7SmsAAAA+UlEQVQoz32SWbKDIBBFmzEIDjEa5+Ttf5evCwJopcn5Us/VW7QNLGFkv4wAN/F2TX4aA1ou6CCySHUNSHz1imhPgecDCA4dA40AEmFCYFqhwDsEBtre6ipUSFLz+4S23RgoqkDsGnU1gFAwf+vH7I/W4yXqGjxy55dq1fl71CIM0LFpSNVYHk+eJrDiS3svtdcVNTjrVSrPYJUvWT5aOX7WI6QxvXJ5BnWXDkeVo24g0ppYnkHNavjBwYAZXvb8DwPMlgM2LIwr+S6unKW9y0vbEXrdWA40xMLo89pvfqrxhwM/pNc5cIfRPfE/mGq29mWizIEaP1jgH5F9CMvJTYCZAAAAAElFTkSuQmCC") no-repeat;background-size: 100%;}
+.pay .pay{font-size: 1.8rem;}
+.pay .btn-reduce, .pay .btn-add, .pay .number{position:relative;display: inline-block;width: 4rem;height: 2.3rem;margin-right: 1rem;}
+.pay .btn-reduce:before, .pay .btn-add:before, .pay .number:before{content: '';position: absolute;left: 50%;top: 50%;width: 200%;border-radius:0;height: 200%;border-radius:4px;border:1px solid #a6aabd;-webkit-transform: translate(-50%, -50%) scale(0.5);transform: translate(-50%, -50%) scale(0.5);pointer-events:none;}
+.pay .btn-reduce span, .pay .btn-add span, .pay .btn-add span:before{position: absolute;left: 50%;top: 50%;height: 1px;width: 2rem;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);background: #a6aabd;}
+.pay .btn-add span{width: 1.8rem;}
+.pay .btn-add span:before{content: '';width: 1px;height: 1.8rem;}
+.pay .number{width: 7rem;text-align: center;}
+.pay .number input{display: block;width: 100%;height: 100%;text-align: center;}
+.pay .btn-line{padding: 0.5rem 2rem 3rem;}
+
+
+
+
+/* 绑定页(bindphone.html)
+------------------------------ */
+.bindphone .container{padding: 5rem 1rem;}
+.bindphone .btn-close{position: absolute;right: 0;top:0;width: 4rem;height: 4rem;background: url("../../img/global/ico_close_gray.png") center no-repeat;background-size: 2.2rem auto;}
+.bindphone .result{display: none;padding-top: 5.4rem;}
+.bindphone .title{font-size: 1.7rem;color: #202020;line-height: 2.8rem;text-align: center;margin-top: -2rem;}
+.bindphone.show-result .container{display: none;}
+.bindphone.show-result .result{display: block;}
+.bindphone.show-result .ico-ok{height: 24.2rem;background: url("../../img/fund/bindphone_ok.png") center no-repeat;background-size: 24.3rem auto;}
+.detail .operations{height: 130px;background: #fff;margin-bottom: 1.5rem;border-bottom: 1px solid #c8c7cc;}
+.detail .operations .op-top{height: 4rem;line-height: 4rem;font-size: 1.5rem;padding: 0 1rem;border-bottom: 1px solid #c8c7cc;border-top: 1px solid #c8c7cc;}
+.detail .operations .op-bot{padding: 0 1rem;padding-top: 30px;}
+

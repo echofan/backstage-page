@@ -1,0 +1,46 @@
+/* 会员列表(index.html)
+------------------------------ */
+.index{background: #fff;}
+.index .ico-eye, .index .ico-wallet{float: left; margin-left: -5.1rem;width: 4rem;height: 4rem;background-size: 100%;}
+.index .ico-eye{background-image: url("../../img/club/hy_icon_yybb.png");}
+.index .ico-wallet{background-image: url("../../img/club/hy_icon_wpjqb.png");}
+.index .list-li{position: relative;}
+.index .list-a{display: block; color: #202020;padding: 1.6rem 1rem 1.6rem 6.2rem;}
+.index .btn-s, .index .btn-red-s{display: inline-block;height: 1.8rem;font-size: 1.4rem;line-height: 1.8rem;text-align: center;vertical-align: top;border-radius: 3px;}
+.index .btn-s{border: 1px solid #ff4342;color: #ff4342;width: 5rem;}
+.index .btn-red-s{color: #fff;background: #ff4342;padding: 0 0.6rem;font-size: 1.1rem;}
+.index .title{font-size: 1.5rem;line-height: 2rem;}
+.index .desc{font-size: 1.3rem;color: #96989c;padding-top: 0.8rem;}
+.index .list-btn{text-align: right;}
+.index .list-detail{position: absolute;right: 0;top:0;width: 7rem;height: 6rem;z-index: 1;}
+
+/* 尾盘捡钱包(wallet.html)
+------------------------------ */
+.wallet{background: #fff;}
+.wallet .btnline{padding: 0 1rem;margin-top: -5rem;background: #4B76E5;}
+
+.wallet .subscribe .title{line-height: 4rem;font-size: 1.5rem;color: #202020;padding: 0 1rem;}
+.wallet .subscribe .recommend{line-height: 5rem;font-size: 1.4rem;padding: 0 1rem;}
+.wallet .subscribe .recommend .num{font-size: 2.4rem;}
+.wallet .subscribe .desc{font-size: 1.1rem;line-height: 1.4rem;padding: 1rem 1rem 1rem 1rem;}
+.wallet .list{font-size: 1.4rem;}
+.wallet .list-li{padding: 1.1rem 1rem 1.3rem;-webkit-box-sizing: border-box;box-sizing: border-box;background: #fff;}
+.wallet .stockname{float: left;width: 31%;}
+.wallet .stockname-title{line-height: 2.2rem;font-size:1.6rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.wallet .stockname-id{font-size: 1.3rem;}
+
+.wallet .stockcap{float: left;width: 21.5%;line-height: 4rem;text-align: center;font-size: 1.6rem;}
+
+.wallet .stockrole{float: right;width: 26%;text-align: right;padding-top: 1rem;}
+.wallet .stockrole-box{position: relative;display: inline-block;padding: 0 0.8rem 0 2.8rem;height: 2rem;line-height:2rem;font-size:1.4rem;color: #fff;border-radius: 3px;}
+.wallet .stockrole-box:before{content: '';position: absolute;left: 0.9rem;top: 50%;margin-top: -0.6rem;width: 1.2rem;height: 1.2rem;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYAQMAAADaua+7AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAABVJREFUCNdjYJBgIBr///8fhEnRAwCCTwgL6hJtGAAAAABJRU5ErkJggg==") no-repeat;background-size: 100%;}
+.wallet .stockstatus{float: left;width: 25%;text-align: right;line-height: 3.4rem;}
+
+.wallet .list-top{padding: 0 1rem;color: #96989c;}
+.wallet .list-top .stockname, .wallet .list-top .stockcap{line-height: 2.7rem;font-size: 0.9rem;}
+.wallet .info{line-height: 2rem;font-size: 1.2rem;color: #96989c;padding: 0 1rem 1rem;}
+.wallet .info-title{font-size: 1.3rem;padding: 1.4rem 0 0;}
+
+.wallet .empty, .wallet .show-empty .list{display: none;}
+.wallet .show-empty .empty{display:block;text-align: center;font-size: 1.8rem;color: #96989c;padding: 14.3rem 0 3rem;background: url("../../img/club/wallet/wpjqb_icon_bk.png") center 4.5rem no-repeat;background-size: 8.5rem;}
+

@@ -1,0 +1,250 @@
+﻿html,body{
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      background-color: #EEF3FA;
+     font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+     -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.nav{
+     height: 70px;
+     width: 70px;
+     margin:0 auto;
+     margin-top:50px;
+
+}
+.nav img{
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+}
+
+.dv1{
+     height: 50px;
+     line-height: 50px;
+     text-align: center;
+     font-size:22px;
+}
+.dv2{
+      color:#93969B;
+      text-align:center;
+      font-size:19px;
+}
+
+.username{
+      width: 80%;
+      height: 40px;
+      background-color: #fff;
+      /*background-color: pink;*/
+      margin:0 auto;
+      position:relative;
+      margin-top:30px;
+     overflow:hidden;
+}
+.username .img-1{
+     display:inline-block;
+     height: 25px;
+     width: 15px;
+     position:absolute;
+     top:50%;  
+     margin-top:-12.5px;   
+     left:5%;
+}
+.username .img-1 img{
+       width: 100%;
+       height: 100%;
+       background-size: cover;   
+}
+
+.username #username{
+    display:inline-block;
+    width: 85%;
+    border-style:none;
+    float: right;
+    height: 36px;
+    font-size:15px;
+    padding-left:3px;
+    outline:none;
+}
+.smscode_left{
+    float:left;
+    width: 60%;
+    height:40px;
+}
+.smscode{
+      width: 80%;
+      height: 40px;
+      background-color: #fff;
+      /*background-color: pink;*/
+      margin:0 auto;
+      position:relative;
+      margin-top:30px;
+ overflow:hidden;
+}
+.smscode .img-2{
+     display:inline-block;
+     height: 25px;
+     width: 15px;
+     position:absolute;
+     top:50%;
+     margin-top:-12.5px;
+     left:5%;
+     float:left;
+}
+.smscode .img-2 img{
+       width: 100%;
+       height: 100%;
+       background-size: cover;   
+}
+.smscode_left #smscode{
+    display:inline-block;
+    width: 75%;
+    border-style:none;
+    float: right;
+    height: 36px;
+    font-size:15px;
+    padding-left:3px;
+    outline:none;
+}
+    .smscode_right.disabled {
+            background-color: #CCC !important;
+        }
+.smscode_right{
+      display: block;
+      border:none;
+      float:left;
+      height: 40px;
+      width: 40%;
+      background-color: #5070FE;
+      color:#fff;
+      text-align:center;
+      line-height: 40px;
+      font-size:16px;
+      outline:none;
+}
+
+.password{
+      width: 80%;
+      height: 40px;
+      background-color: #fff;
+      /*background-color: pink;*/
+      margin:0 auto;
+      position:relative;
+      margin-top:30px;
+       overflow:hidden;
+}
+.password .img-3{
+     display:inline-block;
+     height: 25px;
+     width: 15px;
+     position:absolute;
+     top:50%;
+     margin-top:-12.5px;
+     left:5%;
+}
+.password .img-3 img{
+       width: 100%;
+       height: 100%;
+       background-size: cover;   
+}
+
+.password #password{
+    display:inline-block;
+    width: 85%;
+    border-style:none;
+    float: right;
+    height: 36px;
+    font-size:15px;
+    padding-left:3px;
+    outline:none;
+}
+
+.checkbox{
+      width: 80%;
+      height: 30px;
+      margin:0 auto;
+      margin-top:15px;
+}
+.checkbox span{
+       float:left;
+       width: 60%;
+       font-size:12px;
+
+}
+.checkbox span #checkout{
+vertical-align: middle;
+
+}
+.checkbox span .zhx{
+  
+       color:red;
+}
+.checkbox #inviteCode{
+      width: 35%;
+      float:right;
+}
+
+.register{
+      height: 40px;
+      background-color: red;
+      text-align: center;
+      line-height: 40px;
+      color:#fff;
+      font-size:17px;
+      width: 80%;
+      margin:0 auto;
+      margin-top:10px;
+      border-radius:5px;
+}
+ .player{
+       display:none;
+       background: rgba(0,0,0,0.4); 
+       width: 100%;
+       top:0;
+       position:fixed;
+       left:0;
+       height: 100%;
+       z-index:99; 
+        }
+.tips{
+        min-height: 80px;
+        width: 70%;
+        line-height:40px;
+        background-color:#ffffff;
+        font-size:18px;
+        position:absolute;
+        top: 50%;
+        margin-top: -40px;
+        left:50%;
+        margin-left:-35%;
+        text-align: center;
+        padding-top:10px;
+        border-radius: 5px;
+
+}
+.text{
+     display:block;
+     border-bottom: 1px solid #e1e1e1;
+   min-height:50px;
+}
+.btns{
+    display:block; 
+      height: 30px;
+      line-height: 45px;
+      text-align: center;
+      font-size:17px;
+      border-radius:7px ;
+      line-height: 30px;
+      color:#54A3F5;
+}
+
+.dlete{
+      height: 40px;
+      width: 40px;
+      position:relative;
+      left:50%;
+      margin-left:-20px;
+      top:10%;
+      display: none;
+}

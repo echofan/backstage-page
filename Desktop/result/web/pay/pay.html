@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../res/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/pay/pay.css">
+<body>
+<div class="container pay">
+    <p class="tips" id="title"></p>
+    <div class="line border-bottom border-top flex">
+        <div class="line-lab">付费方式</div>
+        <div class="line-cnt flex-1">
+            <div class="tab-line flex flex-h-justify flex-h-vcenter" id="paymentList">
+                <!--<a class="tab-a on" href="javascript:;"><input name="" class="hide" type="radio"/>按月付费</a>-->
+                <!--<a class="tab-a" href="javascript:;"><input name="" class="hide" type="radio"/>按季付费</a>-->
+                <!--<a class="tab-a" href="javascript:;"><input name="" class="hide" type="radio"/>按年付费</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="line border-bottom border-top flex" id="price">
+        <!--<div class="line-lab">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</div>-->
+        <!--<div class="line-cnt flex-1">-->
+            <!--<div class="price-line">-->
+                <!--<span class="price gray"><span class="line-though">1588</span>元/季</span>-->
+                <!--<span class="price"><span class="red">...</span>元/季</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="discount">8.8折</div>-->
+    </div>
+    <div class="line border-bottom border-top flex ">
+        <div class="line-lab">优惠券</div>
+        <div class="line-cnt flex-1">
+            <a class="line-link js-tap" data-handler="showCoupons" href="javascript:;" id="couponLink">0张可用</a>
+            <span class="arrow-right"></span>
+        </div>
+    </div>
+    <input type="hidden" id="coupon" value="0">
+    <div class="line border-bottom border-top flex">
+        <div class="line-lab">支付方式</div>
+        <div class="line-cnt flex-1">
+            <div class="tab-line flex flex-h-vcenter">
+                <a class="tab-a on" href="javascript:;"><span class="ico-wxpay"></span>微信支付</a>
+            </div>
+        </div>
+    </div>
+    <div class="line border-bottom border-top flex">
+        <div class="line-lab">开通期限</div>
+        <div class="line-cnt flex-1">
+            <div class="tab-line flex flex-h-vcenter">
+                <a class="btn-reduce js-tap" data-handler="reducePeriod" href="javascript:;"><span></span></a><span class="number"><input readonly id="period" value="1" type="text" maxlength="3" pattern="[0-9]*"/></span><a class="btn-add js-tap" data-handler="addPeriod" href="javascript:;"><span></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="line border-bottom border-top flex">
+        <div class="line-lab">应付金额</div>
+        <div class="line-cnt">
+            <span class="pay red">&yen;<span id="totalPrice">...</span>元</span>
+        </div>
+    </div>
+    <div class="btn-line" id="btnLine"><!--加载中加class "btnline-loading"-->
+        <p class="ajaxing-line">正在调起支付...</p>
+        <a class="btn btn-red js-tap" data-handler="payWX" href="javascript:;">确认支付</a>
+    </div>
+</div>
+
+
+
+<div class="layer" id="layer">
+
+    <div class="layer-main">
+
+        <div class="layer-line" id="line"></div>
+
+        <a class="layer-btn js-tap" data-handler="closeLayer" href="javascript:;">知道了</a>
+
+    </div>
+
+</div>
+
+
+<div class="container couponlist">
+    <div class="tab flex">
+        <a href="javascript:;" data-type="1" data-handler="showTab" class="tab-a js-tap flex-1 on">优惠券</a>
+        <a href="javascript:;" data-type="2" data-handler="showTab" class="tab-a js-tap flex-1">体验券</a>
+    </div>
+    <div class="list iscroll" id="wrapper"><!--无数据加class "show-empty"-->
+        <ul class="list-ul" id="couponList">
+          <!--  <li class="list-li">
+            <div class="list-inn">
+            <div class="left">
+            <span class="num">7</span><span class="unit">元</span>
+            </div>
+            <div class="right">
+            <h3 class="title">435</h3>
+            <p class="subtitle">有效日期至33</p>
+            <p class="desc">(3432423)</p>
+            </div>
+            </div>
+            </li>-->
+        </ul>
+        <div class="list-empty">暂无优惠券</div>
+    </div>
+</div>
+
+<script id="payment-template" type="text/html">
+    {{each goods as good i}}
+        {{if i == 0}}
+        <a class="tab-a js-tap on" data-productid="{{ good.productid }}" data-handler="showPrice" data-number="{{ i }}" data-price="{{ good.actualprice }}" href="javascript:;">按{{ good.payment }}付费</a>
+        {{else}}
+        <a class="tab-a js-tap" data-productid="{{ good.productid }}" data-handler="showPrice" data-number="{{ i }}" data-price="{{ good.actualprice }}" href="javascript:;">按{{ good.payment }}付费</a>
+        {{/if}}
+    {{/each}}
+    <input type="hidden" id="productid" value="{{ goods[0].productid }}" name="productid"/>
+</script>
+
+<script id="price-template" type="text/html">
+    <div class="line-lab">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</div>
+    {{if pricepercent<1}}
+    <div class="line-cnt flex-1">
+        <div class="price-line">
+            <span class="price gray"><span class="line-though">{{ price.toFixed(2) }}</span>元/{{payment}}</span>
+            <span class="price"><span class="red">{{ actualprice.toFixed(2) }}</span>元/{{payment}}</span>
+        </div>
+    </div>
+    <div class="discount">{{ (pricepercent*10).toFixed(1) }}折</div>
+    {{else}}
+    <div class="line-cnt flex-1">
+        <div class="price-line">
+            <span class="price"><span class="red">{{ actualprice.toFixed(2) }}</span>元/{{payment}}</span>
+        </div>
+    </div>
+    {{/if}}
+</script>
+
+
+<script id="li-template" type="text/html">
+    {{each data as li i}}
+    <li class="list-li {{if li.consume}}past{{else if li.type == 1}}js-tap{{else}}past{{/if}}" data-amount="{{ fenToyuan(li.amountsub) }}" data-handler="useCoupon"  data-productid="{{ arrayToString(li.productsavailable) }}" data-couponid="{{ li.couponid }}">
+        <div class="list-inn">
+            <div class="left">
+                {{ if li.type == 2 }}
+                <span class="num">{{ li.daysadd }}</span><span class="unit">天</span>
+                {{ else if li.type == 1}}
+                <span class="num">{{ fenToyuan(li.amountsub) }}</span><span class="unit">元</span>
+                {{ /if }}
+            </div>
+            <div class="right">
+                <h3 class="title">{{ li.couponname }}</h3>
+                <p class="subtitle">有效日期至{{ dateFormate(li.expireddate) }}</p>
+                <p class="desc">({{ li.coupondesc }})</p>
+            </div>
+        </div>
+    </li>
+    {{ /each }}
+</script>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+
+<script type="text/javascript" src="../res/js/libs/zepto.min.js"></script>
+<script type="text/javascript" src="../res/js/libs/sea.js"></script>
+<script type="text/javascript" src="../res/js/libs/iscroll.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        // Sea.js 的基础路径
+        base: '/web/res/js/',
+        alias: {
+            'global': 'global.js?20160727',
+            'pay/pay': 'pay/pay.js?20160711'
+        }
+    });
+    // 加载多个模块，在加载完成时，执行回调
+    seajs.use(['global', 'pay/pay'], function(global, pay) {
+        pay.init();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="" name="pgv" />
+    <title>注册</title>
+    <link rel="stylesheet" href="css/pay.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <img src="images/wxid_q3x0px4zcocp12_1481531981681_95.png" alt="">
+        </div>
+        <div class="dv1">股票先机</div>
+        <div class="dv2">大数据助你洞悉庄家先机</div>
+        <div class="username">
+            <span class="img-1"><img src="images/wxid_q3x0px4zcocp12_1481536367506_61.png" alt=""></span>
+            <input type="text" placeholder="手机号码" name="username" id="username" maxlength='11' onblur="this.placeholder='手机号码'" onfocus="this.placeholder=''">
+        </div>
+        <div class="smscode">
+            <div class="smscode_left">
+                <span class="img-2"><img src="images/wxid_q3x0px4zcocp12_1481536392846_61.png" alt=""></span>
+                <input type="text" placeholder="验证码" name="smscode" id="smscode" onblur="this.placeholder='验证码'" onfocus="this.placeholder=''">
+            </div>
+            <!--<input type="submit" class="smscode_right" value="获取验证码" >-->
+             <button class="smscode_right" value="获取验证码">获取验证码</button> 
+        </div>
+        <div class="password">
+            <span class="img-3"><img src="images/wxid_q3x0px4zcocp12_1481536419888_61.png" alt=""></span>
+            <input type="password" placeholder="密码" name="password" id="password" maxlength='16' onblur="this.placeholder='密码'" onfocus="this.placeholder=''">
+        </div>
+        <div class="checkbox">
+            <span>
+            <input type="checkbox" id="checkout" checked="checked">同意                
+            <a class="zhx" href="./protocol.html">《账户服务协议》</a>
+              </span>
+            <input type="text" id="inviteCode" placeholder="邀请码（选填）" onblur="this.placeholder='邀请码（选填）'" onfocus="this.placeholder=''">
+        </div>
+        <div class="register">
+            注册
+        </div>
+    </div>
+    <!--提示信息-->
+    <div class="player">
+         <div class="tips">
+             <!--你输入的手机号有误！-->
+             <span class="text"></span>
+             <btton class="btns">知道了</btton>
+       </div>
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sea.js"></script>
+    <script src="js/jQuery.md5.js"></script>
+    <script src="js/pay.js"></script>
+</body>
+
+</html>

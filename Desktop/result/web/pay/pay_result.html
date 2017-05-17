@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv" />
+    <title>订阅成功</title>
+    <link rel="stylesheet" type="text/css" href="../web/res/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../web/res/css/pay/pay.css">
+<body class="result">
+<div class="container" id="result">
+    <!--<div class="section">-->
+        <!--<div class="ico-ok"></div>-->
+        <!--<h1 class="title">你已成功支付<span class="red">238.00</span>元</h1>-->
+        <!--<p class="desc">您可在我的服务查看订阅详情</p>-->
+        <!--<div class="btn-line">-->
+            <!--<a class="btn btn-red" href="../webtest/fund/index.html">返回我的服务</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="section hide">-->
+        <!--<div class="ico-err"></div>-->
+        <!--<h1 class="title">支付失败</h1>-->
+        <!--<div class="btn-line">-->
+            <!--<a class="btn btn-red" href="../webtest/fund/index.html">联系我们</a>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+
+<script id="result-template" type="text/html">
+    {{ if status }}
+    <div class="section">
+        <div class="ico-ok"></div>
+        <h1 class="title">你已成功支付<span class="red">{{ money }}</span>元</h1>
+        <p class="desc">您可在我的服务查看订阅详情</p>
+        <div class="btn-line">
+            <a class="btn btn-red js-tap" data-handler="back" href="javascript:;">返回我的服务</a>
+        </div>
+    </div>
+    {{ else }}
+    <div class="section hide">
+        <div class="ico-err"></div>
+        <h1 class="title">支付失败</h1>
+        <div class="btn-line">
+            <a class="btn btn-red" href="../web/fund/index.html">联系我们</a>
+        </div>
+    </div>
+    {{ /if }}
+</script>
+
+<script type="text/javascript" src="../web/res/js/libs/zepto.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+<script type="text/javascript" src="../web/res/js/libs/sea.js"></script>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="../web/register/js/sea.js"></script>
+<script type="text/javascript" src="../web/register/js/template.js"></script>
+<script type="text/javascript" src="../web/register/js/global.js"></script>
+<script type="text/javascript" src="../web/res/js/pay/pay.js"></script>
+<script type="text/javascript" src="../web/res/js/pay/result.js"></script>
+
+<!--&lt;!&ndash;<script type="text/javascript">-->
+<!--&gt;>>>>>> f9ba50fd6fa581ff4e4ca1e1002ad51dd102ddc7-->
+    <!--seajs.config({-->
+        <!--// Sea.js 的基础路径-->
+        <!--base: '/gzh/nxb/web/res/js/',-->
+        <!--alias: {-->
+            <!--'global': 'global.js?20160727',-->
+            <!--'pay/result': 'pay/result.js?20160726'-->
+        <!--}-->
+    <!--});-->
+    <!--// 加载多个模块，在加载完成时，执行回调-->
+    <!--seajs.use(['global', 'pay/result'], function(global, result) {-->
+        <!--result.init();-->
+    <!--});-->
+<!--</script>-->
+
+</body>
+</html>

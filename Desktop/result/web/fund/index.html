@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv" />
+    <title>先机基金</title>
+    <link rel="stylesheet" type="text/css" href="../res/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/fund/fund.css">
+<body class="index">
+    <div class="container">
+        <div class="banner" id="banner">
+            <ul class="banner-ul clearfix" id="bannerUl">
+                <!--<li class="banner-li"><a href="javascript:;"><img width="100%" src="../res/img/fund/index_action.png" alt=""/></a></li>-->
+                <!--<li class="banner-li"><a href="javascript:;"><img width="100%" src="../res/img/fund/index_action.png" alt=""/></a></li>-->
+            </ul>
+            <ul class="banner-tab" id="bannerTab">
+            </ul>
+        </div>
+
+        <div class="list">
+            <ul id="fundlist">
+                <!--<li class="li border-bottom border-top">&lt;!&ndash;  点击加class "on"  &ndash;&gt;-->
+                    <!--<div class="li-hd flex">-->
+                        <!--<div class="li-item flex-1">-->
+                            <!--<div class="li-title">先机智能动力基金</div>-->
+                            <!--<div class="li-desc">创建于2016.02.08</div>-->
+                        <!--</div>-->
+                        <!--<div class="li-item flex-1">-->
+                            <!--<div class="li-title">收益率<span class="red">42.98%</span></div>-->
+                            <!--<div class="li-desc">同期上证指数<span class="red">42.98%</span></div>-->
+                        <!--</div>-->
+                        <!--<div class="arrow-down"></div>-->
+                    <!--</div>-->
+                    <!--<div class="li-bd border-top">-->
+                        <!--<div class="tab-line">-->
+                            <!--<div class="tab">-->
+                                <!--<a class="tab-a" href="javascript:;">从创立</a><a class="tab-a" href="javascript:;">一年</a><a class="tab-a" href="javascript:;">三个月</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="colors">-->
+                            <!--<div class="colors-desc"><span class="colors-color bg-pink"></span>先机量化进取基金</div>-->
+                            <!--<div class="colors-desc"><span class="colors-color bg-blue"></span>上证指数</div>-->
+                        <!--</div>-->
+                        <!--<p class="p">基金操作风格稳健，以风控第一为基础，根据趋势适时调整策略积极参与市场行情，重点关注成长型个股。</p>-->
+
+
+                        <!--<div class="btn-line">-->
+                            <!--<a class="btn btn-red" href="detail.html">查看详情</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+
+
+
+        <a class="hawkeye js-tap hide" data-handler="hawkeye" href="javascript:;"></a>
+
+        <!--　　弹窗——提示订阅　[[　-->
+        <div class="poplayer poplayer-subscribe" id="popSubscribe"><!--需要展示加class "show"-->
+            <div class="popmain">
+                <a class="poplayer-close js-tap" data-handler="closeLayer" href="javascript:;"></a>
+                <div class="popline">
+                    订阅先机基金<br>赢取超额收益
+                </div>
+                <div class="popdesc gray">您的基金订阅服务已经到期，请重新订阅！</div>
+                <a class="btn btn-red" href="pay.html">立即订阅</a>
+            </div>
+        </div>
+        <!--　　弹窗——提示订阅　]]　-->
+
+        <!--　　弹窗——未绑定账号　[[　-->
+        <div class="poplayer poplayer-bindaccount" id="popBindAccount"><!--需要展示加class "show"-->
+            <div class="popmain">
+                <a class="poplayer-close js-tap" data-handler="closeLayer" href="javascript:;"></a>
+
+                <a class="btn btn-red" href="../register/bindphone.html">绑定账号</a>
+
+            </div>
+        </div>
+        <!--　　弹窗——未绑定账号　]]　-->
+
+        <!--　　弹窗——未登录　[[　-->
+        <!--<div class="poplayer poplayer-bindaccount" id="popBindLogin">&lt;!&ndash;需要展示加class "show"&ndash;&gt;-->
+            <!--<div class="popmain">-->
+                <!--<a class="poplayer-close js-tap" data-handler="closeLayer" href="javascript:;"></a>-->
+                <!--<a class="btn btn-red" href="../login/login.html">登录</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--　　弹窗——未登录　]]　-->
+
+    </div>
+
+    <div class="layer" id="layer">
+        <div class="layer-main">
+            <div class="layer-line" id="line"></div>
+            <a class="layer-btn js-tap" data-handler="closeLayer" href="javascript:;">知道了</a>
+        </div>
+    </div>
+
+    <script id="li-template" type="text/html">
+        {{each data as fund i}}
+        <li class="li border-bottom border-top">
+            <a href="javascript:;" class="li-hd flex js-tap" data-handler="showMore" data-index="{{ i }}" data-fundid="{{ fund.fundid }}">
+
+                <div class="li-item li-item0 flex-1">
+
+                    {{ if fund.pctchg>0 }}
+                    <div class="li-title">收益率<span class="red">{{ # numToPercent(fund.pctchg) }}</span></div>
+                    {{ else if fund.pctchg<0 }}
+                    <div class="li-title">收益率<span class="green">-{{ # numToPercent(fund.pctchg) }}</span></div>
+                    {{ else }}
+                    <div class="li-title">收益率<span class="gray">{{ # numToPercent(fund.pctchg) }}</span></div>
+                    {{ /if }}
+
+                    {{ if fund.compare_item.pctchg>0 }}
+                    <div class="li-desc">同期上证指数<span class="red">{{ # numToPercent(fund.compare_item.pctchg) }}</span></div>
+                    {{ else if fund.compare_item.pctchg<0 }}
+                    <div class="li-desc">同期上证指数<span class="green">-{{ # numToPercent(fund.compare_item.pctchg) }}</span></div>
+                    {{ else }}
+                    <div class="li-desc">同期上证指数<span class="gray">{{ # numToPercent(fund.compare_item.pctchg) }}</span></div>
+                    {{ /if }}
+
+                </div>
+
+                <div class="li-item li-item1 flex-1">
+
+                    <div class="li-title">{{  fund.fund_name  }}</div>
+                    <div class="li-tips">
+                        <span class="tips bg-red">{{ fund.tags[0] }}</span>
+                        {{ if fund.tags[1] }}
+                        <span class="tips bg-yellow">{{ fund.tags[1] }}</span>
+                        {{ /if}}
+                    </div>
+                    <div class="li-desc">创建于{{ dateFormate(fund.createDate) }}</div>
+
+                </div>
+                <div class="arrow-down"></div>
+            </a>
+            <div class="li-bd border-top">
+                <div class="tab-line">
+                    <div class="tab">
+                        <a class="tab-a js-tap on" data-handler="showTab" data-range="begin-{{i}}" href="javascript:;">从创立</a><a class="tab-a js-tap" data-handler="showTab" data-range="year-{{i}}" href="javascript:;">一年</a><a class="tab-a js-tap" data-handler="showTab" data-range="month-{{i}}" href="javascript:;">三个月</a>
+                    </div>
+                </div>
+                <div class="colors">
+                    <div class="colors-desc"><span class="colors-color bg-pink"></span>先机量化进取基金</div>
+                    <div class="colors-desc"><span class="colors-color bg-blue"></span>上证指数</div>
+                </div>
+                <p class="p">{{ fund.desc }}</p>
+
+                <div class="canvas">
+                    <canvas id="canvas-{{ i }}" width="640" height="400">
+                        <p>你的浏览器不支持html5哟</p>
+                    </canvas>
+                </div>
+
+                <div class="btn-line" id="btn-{{ i }}">
+                   <!--{{ if fund.subscribeStatus}}-->
+                    <!--&lt;!&ndash;<a class="btn btn-red js-tap" data-handler="subscribe" data-fundid="{{ fund.fundid }}" href="javascript:;">订阅</a>&ndash;&gt;-->
+                    <!--<a class="btn btn-red hide" href="detail.html?fundid={{ fund.fundid }}">查看详情</a>-->
+                    <!--{{ else }}-->
+                    <!--<a class="btn btn-red hide js-tap" data-handler="subscribe" data-fundid="{{ fund.fundid }}" href="javascript:;">订阅</a>-->
+                    <!--{{/if}}-->
+                </div>
+                
+            </div>
+            <input type="hidden" id="create-{{ i }}" value="{{ fund.createDate }}"/>
+            <input type="hidden" id="onRange-{{ i }}" data-fundid="{{ fund.fundid }}" value="begin"/>
+        </li>
+        {{ /each }}
+    </script>
+
+    <script id="banner-template" type="text/html">
+        {{each data as banner i}}
+        <li class="banner-li"><a href="{{ banner.url }}"><img width="100%" src="{{ banner.imageurl }}" alt=""/></a></li>
+        {{ /each }}
+    </script>
+
+    <script type="text/javascript" src="../res/js/libs/zepto.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+
+    <script type="text/javascript" src="../res/js/libs/sea.js"></script>
+    <script type="text/javascript">
+        seajs.config({
+            // Sea.js 的基础路径
+            base: '/gzh/nxb/web/res/js/',
+            alias: {
+
+                'global': 'global.js?v=20160729',
+
+                'fund/index': 'fund/index.js?v=20160705'
+
+            }
+        });
+        // 加载多个模块，在加载完成时，执行回调
+        seajs.use(['global', 'fund/index'], function(global, index) {
+            index.init();
+        });
+    </script>
+</body>
+</html>

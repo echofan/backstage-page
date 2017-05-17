@@ -1,0 +1,194 @@
+/*
+* @Author: lifan
+* @Date:   2016-11-10 16:28:58
+* @Last Modified by:   lifan
+* @Last Modified time: 2016-11-11 00:58:30
+*/
+          *{
+             margin:0;
+             padding:0;
+          }
+          body{
+          	   position: relative;
+          }
+          ul{
+            text-align: center;
+            margin: 0 auto;
+            overflow: hidden;
+            position: absolute;
+            top: 40%;
+            margin: 0 auto;
+            left: 13%;
+            width: 80%;
+         
+
+          }
+          ul li{
+              height: 85px;
+                 width: 22%;
+             overflow: hidden;
+             /* background: #ff00ff; */
+             text-align: center;
+             /* line-height: 20px; */
+             display: inline-block;
+              font-size: 60px;
+              font-weight: 700;
+
+             color: red;
+             position: relative;
+          }
+          dl{
+            position: absolute;
+            top: 10px;
+            left:0;
+          
+          }
+          dd{
+            display: block;
+             height: 100px;
+             width: 30px;
+
+          }
+       /*    .btn{
+        
+         text-align: center;
+       
+         margin: 0 auto;
+         display: block;
+         border: none;
+         padding: 10px;
+         font-size: 18px;
+       } */
+          .panel{
+            text-align: center;
+            margin: 50px auto;
+          }
+          .reset{
+            -webkit-animation:flip 1s .2s ease both;
+            display: none;
+          }
+         /*  .flash{
+            -webkit-animation:flash 1s .2s ease both;
+          } */
+          .contant{
+            -webkit-animation:wobble 3s .2s ease  both;
+          }
+          @-webkit-keyframes wobble{
+            0%{-webkit-transform:translateX(0%)}
+            15%{-webkit-transform:translateX(-25%) rotate(-5deg)}
+            30%{-webkit-transform:translateX(20%) rotate(3deg)}
+            45%{-webkit-transform:translateX(-15%) rotate(-3deg)}
+            60%{-webkit-transform:translateX(10%) rotate(2deg)}
+            75%{-webkit-transform:translateX(-5%) rotate(-1deg)}
+            100%{-webkit-transform:translateX(0%)}
+          }
+          @-webkit-keyframes flip{
+            0%{-webkit-transform:perspective(400px) rotateY(0);
+            -webkit-animation-timing-function:ease-out}
+            40%{-webkit-transform:perspective(400px) translateZ(150px) rotateY(170deg);
+            -webkit-animation-timing-function:ease-out}
+            50%{-webkit-transform:perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+            -webkit-animation-timing-function:ease-in}
+            80%{-webkit-transform:perspective(400px) rotateY(360deg) scale(.95);
+            -webkit-animation-timing-function:ease-in}
+            100%{-webkit-transform:perspective(400px) scale(1);
+            -webkit-animation-timing-function:ease-in}
+           }
+        /*   @-webkit-keyframes flash{
+          0%,50%,100%{opacity: 1;}
+          25%,75%{opacity: 0;}
+        } */
+         
+       /*    .dv{
+       	   height: 200px;
+       	   width: 80%;
+       	   background-color:#ffffff;
+       	   background-color:yellow;   
+       	   position: absolute;
+       	    left: 58px;
+       	    top: 175px;
+       	    z-index: 10;
+       	       left: 50%;
+       
+       	    border-radius: 5px;
+       	    margin: 0 37px 0;
+                
+       
+       } */
+          .pho{
+          	    background: url(../images/lhj_popup_1.png) no-repeat;
+          	     height: 200px;
+          	     width: 250px;
+          	     background-size: cover;
+          	     position: absolute;
+          	     top: 20%;
+          	     left: 50%;
+          	     margin-left: -125px;
+          	     /* display: none; */
+          }
+
+        #phone{
+        	   width: 90%;
+        	   height: 30px;
+        	   position:absolute;
+        	   left: 10px;
+        	   top: 100px;
+        	   /* color: #fff; */
+        	   margin: 15px 3px 0;
+        } 
+        .btns{
+        	   display: block;
+        	    width: 90%;
+        	    height: 35px;
+        	    background-color:red;
+        	    color: #ffffff;
+        	    text-align: center;
+        	    line-height: 35px;
+        	    text-decoration: none;
+        	    font-size: 18px;
+        	    position: absolute;
+        	    bottom: 10px;
+        	     margin:0 15px 0 ;
+        	    border: none;
+        	    border-radius: 5px;
+        	    margin-top: 10px;
+        }
+
+       .delete{
+       	    position: absolute;
+       	       left: 50%;
+       	       height: 50px;
+       	       width: 50px;
+       	       margin-left: -25px;
+       	       bottom: -70px;
+       }
+
+
+
+
+
+
+
+
+     
+          .nav{
+          	   width: 100%;
+          }
+          .nav_top{   
+          	    width: 100%;
+          	    height: 100%;
+          	    position: relative;
+          	    /* background-size: cover; */
+          }
+          .nav_top img{
+          	   height: 100%;
+          	   width: 100%;
+          }
+          .nav_bot{position:absolute; left:0; bottom:0;}
+          .one{width: 60px;height: 40px;position:absolute;left:35px;bottom:125px;}
+          .one img{width: 100%;}
+          .three{width: 60px;height: 40px;position:absolute;right:35px;bottom:125px;}
+          .three img{width: 100%;}
+          /* .btn{width: 100px;height: 80px;position:absolute;bottom:108px;left:110px;} */
+          .btn{width: 100px;height: 80px;position:absolute; left:50%; margin-left:-50px; top:53%;}
+          .btn img{width: 100%;}

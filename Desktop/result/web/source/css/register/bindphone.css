@@ -1,0 +1,9 @@
+/* 绑定页(bindphone.html)
+------------------------------ */
+.bindphone .container{padding: 5rem 1rem;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.bindphone .btn-close{position: absolute;right: 0;top:0;width: 4rem;height: 4rem;background: url("../../img/global/ico_close_gray.png") center no-repeat;background-size: 2.2rem auto;}
+.bindphone .result{display: none;padding-top: 5.4rem;}
+.bindphone .title{font-size: 1.7rem;color: #202020;line-height: 2.8rem;text-align: center;margin-top: -2rem;}
+.bindphone.show-result .container{display: none;}
+.bindphone.show-result .result{display: block;}
+.bindphone.show-result .ico-ok{height: 24.2rem;background: url("../../img/register/bindphone_ok.png") center no-repeat;background-size: 24.3rem auto;}

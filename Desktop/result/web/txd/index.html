@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta content="" name="pgv"/>
+    <title>跟庄探险队详情页</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
+    
+    <!-- <script type="text/javascript" src="js/iscroll-probe.js"></script> -->
+       <!-- <script type="text/javascript" src="js/idangerous.swiper.min.js"></script> -->
+        <style>          
+               #wrapper{
+                width:100%;
+               }
+               #scroller{
+                overflow: hidden;
+               }
+        </style>
+    </head>
+    <body>
+    <!-- 腾讯模板引擎开始 -->
+           <!-- 头部渲染 -->
+             <script id="tempId" type="text/template">
+                <div class="nav_header">今日跟庄探险机会</div>
+                <div id='wrapper'>
+                  <div id='scroller'>
+                      <ul class="nav_box"> 
+                        <%for(var i=1;i<list[0].events.length;i++){%>  
+                           <li >
+                               <span class="sp1"><%=list[0].events[i].time.substr(11,5)%></span>
+                               <span><%=list[0].events[i].desc%></span>
+                           </li>
+                  
+                        <%}%>
+                      </ul>
+                  </div>
+                </div>
+                 
+                <div class="nav_btm"> </div>
+            </script>
+
+            <script id="templateId" type="text/template">
+                  <%for(var i=1;i<list.length;i++){%>
+                      <!-- <%if(i){%>  -->
+                        <div class="one-top">
+                            <span class="title f_l">
+                                   前<%=i%>期(<span class="pan"><%=list[i].date%></span>)
+                            </span>
+                    <span class="abc f_r">
+                             
+                    </span>
+                </div>
+                <div class="bot">
+                 <ul>
+                
+                     <%for(var j=0;j<list[i].events.length;j++){%>
+                       <!-- <%if(i){%> -->
+                       <li><span><%=list[i].events[j].time.substr(11,5)%></span><span><%=list[i].events[j].desc%></span></li>
+                        <!-- <%}%> -->
+                     <%}%>
+             <!-- <%}%> -->
+                 </ul>
+                     
+                </div>          
+
+            </div>
+                  <%}%>
+            </script>
+            <div class="header">
+                       	     <div class="header_left">
+                       	     	     <!-- <img src="images/gz_picture.png" alt="探险队"> -->
+                       	     </div>
+                       	     <div class="header_right">
+                       	     	    <div class="header_right_top">
+                       	     	    	     跟庄探险期限
+                       	     	    </div>
+                       	     	    <div class="header_right_bottom">
+                       	     	    	     <!-- 2017年1月23日 -->
+                       	     	    </div>
+                       	     </div>
+                       	     <div style="clear:both;"></div>
+                       	     <div class="progress">  
+                             <div class="red"></div>                   	   
+                              <div class="tits">
+
+                                <span class="npm_l"></span>/<span class="npm_r"></span>
+                                </div> 
+                       	     	
+                       	      
+                       	     </div>
+                       	      <div class="Subscribe">
+                       	          	<!-- 还差<span class="num"></span>位股  友，你就能获得1个月免费跟庄订阅 -->                    	    
+                       	      </div> 
+                       	   <!-- <a href="" class="btn">推荐好友</a> -->
+               <button class="btn">推荐好友</button>
+            
+             </div>  
+                       <div class="nav">
+                       	                            	          
+                              
+
+                       </div>
+              <div class="one">
+                
+                <section>
+                  
+                </section>
+              </div>   
+  
+           <script type="text/javascript" src="js/jquery.min.js"></script>
+           <script type="text/javascript" src="template-native.js"></script>
+           <script type="text/javascript" src="js/index.js"></script>
+          <script>
+             $(function(){
+                 $(".one").on("click",".one-top",function(){
+                      $(this).next().toggle();
+                       $(this).children('.abc').toggleClass("abc-top");
+                 }) 
+
+                 $(".nav").on("click","li",function(){
+                         $(this).addClass('gray').siblings().removeClass("gray");   
+                 });
+              
+             });   
+          </script>       
+    </body>
+</html>

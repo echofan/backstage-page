@@ -1,0 +1,177 @@
+article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,legend,label,input,select,textarea,button,th,td,menu,figure,svg,g{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,input,textarea,select,button,label{font-size:100%;vertical-align:middle;font-weight:400;}
+ul,dl,ol{list-style:none;}
+img,fieldset{border:0 none;outline:0 none;}
+img{display:inline-block;overflow:hidden;vertical-align:middle;}
+em{font-style:normal;}
+strong{font-weight:normal;}
+table{border-collapse:collapse;border-spacing:0;}
+
+input,textarea,select{-webkit-appearance:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);outline:none;}
+input{border:0 none;}
+::-webkit-input-placeholder{color:#d0d6e2;}
+textarea{word-wrap:break-word;resize:none;}  /* word-wrap for opera, resize for webkit */
+select{border: 0 none;}
+select::-ms-expand{display:none;}
+::-ms-check {display:none;}
+::-webkit-inner-spin-button {-webkit-appearance:none;}
+::-webkit-outer-spin-button {-webkit-appearance:none;}
+input[type="number"]{-webkit-user-select:text;}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none!important;margin:0;}
+button,input[type="button"]{cursor:pointer;border:0 none;}
+
+a,button,input,img{-webkit-touch-callout:none;}  /* 1.ios 长按时不触发系统的菜单 2.禁止长按时下载图片 */
+/* 去除android4.0以下 a/button/input标签被点击时产生的边框 因为边框引起了不少bug */
+a,button,input{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+/* Android4.0下不识别选择器-webkit-transform-3d 使用它可做Android4.0下版本兼容 */
+@media all and (-webkit-transform-3d){
+    /* android4.0+ ios4+ 恢复按钮被点击时产生的效果 */
+    a,button,input{-webkit-tap-highlight-color:rgba(130,130,130,0);}
+}
+a{outline:0 none;text-decoration:none;color:#40BCE8;cursor:pointer;-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+a,a:visited{color:transparent;}
+
+html,body{height:100%;}
+body{-webkit-user-select:none;-webkit-text-size-adjust:none;font-family:Helvetica;background: #F0EFF4;color: #202020;}
+.hide{display: none!important;}
+.line-though{text-decoration: line-through;}
+.underline{text-decoration: underline;}
+.red{color: #ff4342!important;}
+.green{color: #1aad0a!important;}
+.gray{color: #96989c!important;}
+.bg-pink{background: #e1007a!important;}
+.bg-blue{background: #5071ff!important;}
+.bg-red{background: #ff4342!important;}
+.bg-yellow{background: #fdb21b!important;}
+.bg-green{background: #1bad0a!important;}
+.bg-gray{background: #ccc!important;}
+.bg-lightblue{background: #06a3f6!important;}
+.bg-lightorange{background: #fd961c!important;}
+.bg-lightpink{background: #9f65c8!important;}
+
+/* 清除浮动 */
+.clearfix:after{content:".";clear:both;display:block;height:0;line-height:0;font-size:0;visibility:hidden;}
+.clearfix{zoom:1;}
+
+
+/* rem [[ */
+html {font-size: 10px;}
+@media (min-width: 320px) and (max-width: 359px) and (min-height: 503px){html {font-size: 10px;}}
+@media (min-width: 360px) and (max-width: 413px) and (min-height: 566px){html {font-size: 11px;}}
+@media (min-width: 414px) and (max-width: 479px) and (min-height: 651px){html {font-size: 12px;}}
+@media (min-width: 448px) and (max-width: 539px) and (min-height: 705px){html {font-size: 14px;}}
+@media (min-width: 540px) and (max-width: 719px) and (min-height: 849px){html {font-size: 16px;}}
+@media (min-width: 720px) and (max-width: 1079px) and (min-height: 1132px){html {font-size: 22px;}}
+@media (min-width: 1080px) and (min-height: 1698px) {html {font-size: 33px;}}
+/* rem ]] */
+
+/*  线  */
+.border-top, .border-bottom{position:relative;}
+.border-top:before, .border-bottom:after{content:'';position:absolute;left:0;right:0;height:0;-webkit-transform:scaleY(.5);-webkit-transform-origin:0 0;z-index:2;}
+.border-top:before{top:0;border-top:1px solid #c8c7cc;}
+.border-bottom:after{bottom:0;border-bottom:1px solid #c8c7cc;}
+/*  针对dpr为1.5的设备兼容缩放  */
+@media all and (-webkit-device-pixel-ratio:1.5){
+    .border-top:before, .border-bottom:after{-webkit-transform:scaleY(1);}
+}
+.btn{display: block;height: 3.4rem;line-height: 3.4rem;font-size: 1.8rem;text-align: center;border-radius: 3px;border:1px solid #ff4342;}
+.btn-red{color: #fff!important;background: #ff4342;border:1px solid #ff4342;}
+.btn-white{color: #ff4342!important;background: #ffffff;border:1px solid #ff4342;}
+
+/* 盒模型（兼容ios 4+、android 2.3+、winphone8+）
+------------------------------ */
+/*  定义为盒模型  */
+.flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}
+
+/*  盒模型垂直布局  */
+.flex-v{
+    -webkit-box-orient:vertical;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    flex-direction:column;
+}
+
+/*  子元素自动占据剩余的空间  */
+.flex-1{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+}
+
+/*  水平布局下的子元素-两端对齐  */
+.flex-h-justify{
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+}
+
+/*  水平布局下的子元素-水平居中  */
+.flex-h-hcenter{
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+}
+
+/*  水平布局下的子元素-垂直居中  */
+.flex-h-vcenter{
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+}
+
+
+/* Iscroll婊戝姩鍔犺浇鍔ㄧ敾 */
+html,body,.container{height:100%;}
+.iscroll-wrap-v, .iscroll-wrap{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;height:100%;}
+.iscroll-wrap-v{min-height:100%;height:auto;height:100%\9;}
+.iscroll{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;position:relative;width:100%;}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {/* IE10鍏煎 */
+    .iscroll{overflow:scroll;}
+}
+
+
+
+.arrow-down, .arrow-up{display: inline-block;width:2.2rem;height: 2.2rem;background: url("../img/global/arrow_down.png") no-repeat;background-size: 100%;-webkit-transform-origin:50%;transform-origin:50%;}
+.arrow-up{-webkit-transform:rotate(50%);transform:rotate(50%);}
+.arrow-right{display:inline-block;width:0.7rem;height: 1rem;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAS1BMVEUAAADAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxczAxcwBktQJAAAAGHRSTlMAxNfORjAeDfPx5+S1qpqOjXtuXlMiFgdHgpLuAAAAUUlEQVQY02XQRw7AQAgEwWWjcw79/5f6OLLgVhIChnCnK6gMDulJsIltgvmVF7Am7hCreMJQxNzTZbGMsIo1gjmp003RBrddl7mrlcin/X/iAxGFBZNUZ6aPAAAAAElFTkSuQmCC") no-repeat;background-size: auto  100%; }
+.ico-clear{display:none;position:absolute;right:0;top:50%;margin-top:-22px;width:17px;height:17px;padding:13px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAA/FBMVEUAAADDxbvQ0cfCw7vt7uTExbz19uvY2tDx8uns7uOxsqnFxrzLzMS8vbbh49fZ3NK7vLTi49vLzMS0tqrNz8K2t6/DxLzi49vCw7ns7eLp6uPf4Nn3+Ore39a9vrXJyr+9v7O/wLi7vLTa2tPP0Mjk5d3i49vNzsb19u7s7ObBwrjJysLg4dmwsamztKyur6etrqaqq6OpqqKsraX///////qrrKSnqJ/Awbn+/ve3uLDCw7vu7+elpp7y8uva29Lm59/s7ebc3dT5+vL///y7vLTW187Gx77Oz8fg4dn29++jpJyxsqqwsamxsqqxsqqxsqqxsqnJysKys6tVysH3AAAALXRSTlMAqWvRL7kHhh0i5JKbu1Jy8lim0LvZ6zjmSChyBGL8xNzW55ioPz+LERG5z131tYrZAAAB8ElEQVQ4y8XTx3LbMBQFUPUuWXK3Y4/T6zw+FBIsKhQlURWbDP7/XwIQZCLFzi4zvtSKOrwA34Cl10hr0K2/61z1v4xa/xCfP7x3HAXKiW57n14C9z0kVAgCiJzRqHf/TIyGDBHsD0Cr4egv8cZhCDZow9TZiXh0BJocG6oej0QtpXoFQgqFnAMQP639Fg9PYP5RMkMgAZU0j7Cnh4IMKICkQTIfM20ksE0yj7heCge5aFxqAixw3UnAiCQ8mLhewHQPrzcsuUOi64lahMYIOp654S4SZlvyzpKmyvZJZOxpczAdsdmTvpymJWXI3xLX4SqJZ6swlhQzJMuWXPwspoXrped5y1iy/A5cWNIBLAxdhGG4Ax/zqI4lb4sWMt1M9p6XBJTkJerKkktLgE83S3efhO5sLDBv7lvSBdvBgpnnzaOF584C397CriWVfCOb5TKcS6b0uycpz2YFFUvat9yIdB96O0klhdj0UATg1+1SPjtT64/d1dzxQSJVC9fdUgLS15PLa6RZV23XDs3OnXC260ivJKL2nzOH5rxMDzx/D+4fhJ42PTp3jbqdxEkI+944/oKqgtvhmMsK+qN1+pXVCT/toP1CFPnaxAPFPMAPTvNb6VluzlPBiYnwnY83pRdTq5Sr1+mwen5WK/33/AJqBYBN/kD+dgAAAABJRU5ErkJggg==) center center no-repeat;background-size:17px 17px;}
+.show-clear .ico-clear{display:block;}
+
+.poplayer{display: none;position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.4);z-index: 99;}
+.poplayer .popmain{position:relative;width: 21rem;padding: 0 1.6rem;background: #fff;border-radius: 3px;}
+.poplayer .poplayer-close{right: -16px;top: -16px;}
+.poplayer .popdesc{font-size: 1.1rem;line-height: 2.8rem;}
+.poplayer.show{display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;-webkit-box-align:center;}
+
+
+.poplayer-bindaccount .popmain{padding: 14rem 1.7rem 2.3rem;}
+.poplayer-bindaccount.show .popmain{background: #fff url("../img/global/poplayer_bindaccount.png") no-repeat;background-size: 100% auto;}
+.layer{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:99;}
+.layer-main{position:absolute;left:50%;top:50%;width:27rem;-webkit-transform:translate(-50%, -50%) translateZ(0);transform:translate(-50%, -50%) translateZ(0);background-color:#fff;text-align:center;border-radius:4px;font-size:1.6rem;}
+.layer-line{line-height:3rem;padding:2rem 0;}
+.layer-btn{display:block;height:4.4rem;line-height:4.4rem;border-top:1px solid #e1e1e1;color:#54A3F5;}
+.poplayer-close{position:absolute;right:-6px;top:-6px;width:32px;height:32px;background:url(../img/global/ico_close.png) center no-repeat;background-size:20px;}
+.layer.show{display:block;}
+
+
+
+.ico-phone, .ico-code, .ico-lock{position: absolute;left: 1.5rem;top: 50%;width: 2.1rem;height: 2.4rem;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.ico-phone{background: url("../img/global/wx_icon_phone.png") no-repeat;background-size: auto 100%;}
+.ico-code{background: url("../img/global/wx_icon_code.png") no-repeat;background-size: auto 100%;}
+.ico-lock{background: url("../img/global/login_icon_lock.png") no-repeat;background-size: auto 100%;}
+.form-line{position: relative;margin-bottom: 1.5rem;}
+.form-text{display:block;width: 100%;height: 4rem;font-size: 1.6rem;border: 1px solid #d7dce3;padding: 1rem 0.5rem 1rem 5rem;-webkit-box-sizing: border-box;box-sizing: border-box;border-radius: 3px;}
+.btn-sms{display: block;width: 11.8rem;height: 100%;line-height: 4rem;background: #5071ff;border-radius: 0 3px 3px 0;color: #fff;text-align: center;font-size: 1.5rem;}
+.btn-sms.disabled{background: #ccc;}
+.form-line-sms .form-text{border-radius: 3px 0 0 3px;border-right: 0 none;}
+
+
+
+
+
+

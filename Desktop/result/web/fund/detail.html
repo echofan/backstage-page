@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv" />
+    <title>先机基金</title>
+    <link rel="stylesheet" type="text/css" href="../res/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/fund/fund.css">
+<body class="detail">
+    <div class="container">
+        <div id="info">
+            <p class="tips border-bottom">基金操作风格稳健，以风控第一为基础，根据趋势适时调整策略积极参与市场行情，重点关注成长型个股。</p>
+            <div class="about border-top">
+                <div class="about-info1 flex flex-h-justify">
+                    <div>
+                        <span class="gray">成立于</span>2015年3月12日
+                    </div>
+                    <div>
+                        <span class="gray">初始资金</span>50W
+                    </div>
+                </div>
+                <canvas id="canvas_fan" width="320" height="220" >您的浏览器不支持canvas</canvas>
+                <div class="about-info2 flex">
+                    <div class="flex-1"><span class="gray">&nbsp;总&nbsp;资&nbsp;产</span>300W</div>
+                    <div class="flex-1"><span class="gray">&nbsp;仓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</span><span class="red">55.63%</span></div>
+                </div>
+                <div class="about-info2 flex">
+                    <div class="flex-1"><span class="gray">&nbsp;总&nbsp;收&nbsp;益</span>300W</div>
+                    <div class="flex-1"><span class="gray">同期上证指数</span><span class="green">-5.63%</span></div>
+                </div>
+                <div class="about-info2 flex">
+                    <div class="flex-1"><span class="gray">本周收益</span>300W</div>
+                    <div class="flex-1"><span class="gray">本月收益</span><span class="green">-5.63%</span></div>
+                </div>
+        </div>
+        </div>
+
+        <!--  最新调仓 [[  -->
+        <div class="operating-list border-top border-bottom" id="operatingList">
+            <div class="operating-list-hd">
+                <div class="operating-list-title">
+                    最新调仓<span class="gray">(2016-03-09 13:14:46)</span>
+                </div>
+                <a class="more gray" href="position.html">更多调仓<span class="arrow-right"></span></a>
+            </div>
+            <div class="table">
+                <table width="100%" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td class=" border-top">
+                        <span class="ico-sale">买</span>汇洁股份
+                        </td>
+                        <td class="col2 border-top">
+                        成交价：40.16
+                        </td>
+                        <td class="col3 border-top">1800股</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+          
+        <div class="operations">
+                 <div class="op-top">
+                       操作说明
+                </div>  
+                 <div class="op-bot">
+                     建议您按比例复制基金操作，同步买入卖出，不要全仓或重仓基金中的某一只股票，如果滞后于基金操作请您自行判断买卖点。
+                </div>  
+        </div>
+        <!--  最新调仓 ]]  -->
+        <!--  持仓详情 [[  -->
+        <div class="holding-list">
+            <div class="holding-list-title border-top border-bottom">持仓详情</div>
+            <div class="table border-bottom">
+                <table width="100%" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th class="col1">股票</th>
+                            <th class="col2">股数</th>
+                            <th class="col3">成本/当前价</th>
+                            <th class="col4">盈亏比</th>
+                        </tr>
+                    </thead>
+                    <tbody id="holdingList">
+                        <tr>
+                            <td class="border-top">
+                                <div>汇洁股份</div>
+                                <div class="gray">002763</div>
+                            </td>
+                            <td class="border-top">
+                                <div>1800股</div>
+                                <div class="gray">63元</div>
+                            </td>
+                            <td class="border-top">32.86/35.59</td>
+                            <td class="border-top"><span class="red">+13.36%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--  持仓详情 ]]  -->
+
+
+
+        <div class="btn-line">
+
+            <a href="javascript:;" data-handler="pay" class="btn btn-red js-tap">续订</a>
+
+        </div>
+
+    </div>
+
+    <script id="info-template" type="text/html">
+        <p class="tips border-bottom">{{ desc }}</p>
+        <div class="about border-top">
+            <div class="about-info1 flex flex-h-justify">
+                <div>
+                    <span class="gray">成立于</span>{{ dateFormate(createDate) }}
+                </div>
+                <div>
+                    <span class="gray">初始资金</span>{{ init_amount }}万元
+                </div>
+            </div>
+            <div class="canvas"><canvas id="canvas_fan" width="640" height="600">您的浏览器不支持canvas</canvas></div>
+            <div class="about-info2 flex">
+                <div class="flex-1"><span class="gray">&nbsp;总&nbsp;资&nbsp;产</span>{{ total_amount.toFixed(2) }}万元</div>
+                <div class="flex-1"><span class="gray">&nbsp;仓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</span><span class="">{{ numToPercent(per) }}</span></div>
+            </div>
+            <div class="about-info2 flex">
+                <div class="flex-1"><span class="gray">&nbsp;总&nbsp;收&nbsp;益</span><span class="{{ if pctchg>0 }}red{{else if pctchg<0}}green{{else}}gray{{/if}}">{{ numToPercent(pctchg) }}</span></div>
+                <div class="flex-1"><span class="gray">同期上证指数</span><span class="{{ if compare_item.pctchg>0 }}red{{else if compare_item.pctchg<0}}green{{else}}gray{{/if}}">{{ numToPercent(compare_item.pctchg) }}</span></div>
+            </div>
+            <div class="about-info2 flex">
+                <div class="flex-1"><span class="gray">本周收益</span><span class="{{ if month_pctchg>0 }}red{{else if month_pctchg<0}}green{{else}}gray{{/if}}">{{ numToPercent(month_pctchg) }}</span></div>
+                <div class="flex-1"><span class="gray">本月收益</span><span class="{{ if week_pctchg>0 }}red{{else if week_pctchg<0}}green{{else}}gray{{/if}}">{{ numToPercent(week_pctchg) }}</span></div>
+            </div>
+        </div>
+    </script>
+
+
+    <script id="operating-template" type="text/html">
+        <div class="operating-list-hd">
+            <div class="operating-list-title">
+                最新调仓<span class="gray">({{ getNowDate() }})</span>
+            </div>
+            <a class="more gray" href="operation.html?fundid={{ fundid }}">更多调仓<span class="arrow-right"></span></a>
+        </div>
+        <div class="table">
+            <table width="100%" cellpadding="0">
+                <tbody>
+                    {{each data as operating i}}
+                    <tr>
+                        <td class="col1 border-top">
+                            {{ if operating.operate }}
+                            <span class="ico-sale">卖</span>{{ operating.stockname }}
+                            {{else }}
+                            <span class="ico-buy">买</span>{{ operating.stockname }}
+                            {{/if}}
+                        </td>
+                        <td class="col2 border-top">
+                            成交价：{{ operating.currentprice.toFixed(2) }}
+                        </td>
+                        <td class="col3 border-top">{{ operating.volume }}股</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </script>
+
+    <script id="holding-template" type="text/html">
+        {{each data as position i}}
+        <tr>
+            <td class="border-top">
+                <div>{{ position.stockname }}</div>
+                <div class="gray">{{ position.stockid }}</div>
+            </td>
+            <td class="border-top">
+                <div>{{ position.volume }}股</div>
+                <div class="gray">{{ (position.volume * position.currentprice).toFixed(0) }}元</div>
+            </td>
+            <td class="border-top">{{ position.costprice.toFixed(2) }}/{{ position.currentprice.toFixed(2) }}</td>
+            <td class="border-top"><span class="{{ if position.pctchg>0 }}red{{else if position.pctchg<0}}green{{else}}gray{{/if}}">{{ numToPercent(position.pctchg) }}</span></td>
+        </tr>
+        {{/each}}
+    </script>
+
+
+    <script type="text/javascript" src="../res/js/libs/zepto.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+
+    <script type="text/javascript" src="../res/js/libs/sea.js"></script>
+    <script type="text/javascript">
+        seajs.config({
+            // Sea.js 的基础路径
+            base: '/gzh/nxb/web/res/js/',
+            alias: {
+                'global': 'global.js?20160630',
+
+                'fund/detail': 'fund/detail.js?20160631'
+
+            }
+        });
+        // 加载多个模块，在加载完成时，执行回调
+        seajs.use(['global', 'fund/detail'], function(global, detail) {
+            detail.init();
+        });
+    </script>
+</body>
+</html>
