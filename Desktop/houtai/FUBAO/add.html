@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>添加成员</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<!-- basic styles -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+	<!-- page specific plugin styles -->
+
+	<link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery.gritter.css" />
+	<link rel="stylesheet" href="plugins/layui/css/layui.css"/>
+	<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css"/>
+
+	<!-- fonts -->
+
+	<!-- ace styles -->
+
+	<link rel="stylesheet" href="assets/css/ace.min.css" />
+	<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+	<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+
+
+
+	<script src="assets/js/ace-extra.min.js"></script>
+
+</head>
+
+<body>
+	<div class="navbar navbar-default" id="navbar">
+		<script type="text/javascript">
+			try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+		</script>
+
+		<div class="navbar-container" id="navbar-container">
+			<div class="navbar-header pull-left">
+				<a href="#" class="navbar-brand">
+						<small>
+							<i class="icon-leaf"></i>
+							Ace Admin
+						</small>
+					</a>
+				<!-- /.brand -->
+			</div>
+			<!-- /.navbar-header -->
+
+			<div class="navbar-header pull-right" role="navigation">
+				<ul class="nav ace-nav">
+					<li class="grey">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="icon-tasks"></i>
+								<span class="badge badge-grey">4</span>
+							</a>
+
+						<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+							<li class="dropdown-header">
+								<i class="icon-ok"></i> 4 Tasks to complete
+							</li>
+
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left">Software Update</span>
+										<span class="pull-right">65%</span>
+									</div>
+
+									<div class="progress progress-mini ">
+										<div style="width:65%" class="progress-bar "></div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left">Hardware Upgrade</span>
+										<span class="pull-right">35%</span>
+									</div>
+
+									<div class="progress progress-mini ">
+										<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left">Unit Testing</span>
+										<span class="pull-right">15%</span>
+									</div>
+
+									<div class="progress progress-mini ">
+										<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left">Bug Fixes</span>
+										<span class="pull-right">90%</span>
+									</div>
+
+									<div class="progress progress-mini progress-striped active">
+										<div style="width:90%" class="progress-bar progress-bar-success"></div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+										See tasks with details
+										<i class="icon-arrow-right"></i>
+									</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="purple">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="icon-bell-alt icon-animated-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+
+						<ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+							<li class="dropdown-header">
+								<i class="icon-warning-sign"></i> 8 Notifications
+							</li>
+
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink icon-comment"></i>
+												New Comments
+											</span>
+										<span class="pull-right badge badge-info">+12</span>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+										<i class="btn btn-xs btn-primary icon-user"></i>
+										Bob just signed up as an editor ...
+									</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success icon-shopping-cart"></i>
+												New Orders
+											</span>
+										<span class="pull-right badge badge-success">+8</span>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info icon-twitter"></i>
+												Followers
+											</span>
+										<span class="pull-right badge badge-info">+11</span>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+										See all notifications
+										<i class="icon-arrow-right"></i>
+									</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="green">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="icon-envelope icon-animated-vertical"></i>
+								<span class="badge badge-success">5</span>
+							</a>
+
+						<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+							<li class="dropdown-header">
+								<i class="icon-envelope-alt"></i> 5 Messages
+							</li>
+
+							<li>
+								<a href="#">
+										<img src="assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+										<span class="msg-body">
+											<span class="msg-title">
+												<span class="blue">Alex:</span>
+												Ciao sociis natoque penatibus et auctor ...
+											</span>
+
+											<span class="msg-time">
+												<i class="icon-time"></i>
+												<span>a moment ago</span>
+											</span>
+										</span>
+									</a>
+							</li>
+
+							<li>
+								<a href="#">
+										<img src="assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+										<span class="msg-body">
+											<span class="msg-title">
+												<span class="blue">Susan:</span>
+												Vestibulum id ligula porta felis euismod ...
+											</span>
+
+											<span class="msg-time">
+												<i class="icon-time"></i>
+												<span>20 minutes ago</span>
+											</span>
+										</span>
+									</a>
+							</li>
+
+							<li>
+								<a href="#">
+										<img src="assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+										<span class="msg-body">
+											<span class="msg-title">
+												<span class="blue">Bob:</span>
+												Nullam quis risus eget urna mollis ornare ...
+											</span>
+
+											<span class="msg-time">
+												<i class="icon-time"></i>
+												<span>3:15 pm</span>
+											</span>
+										</span>
+									</a>
+							</li>
+
+							<li>
+								<a href="inbox.html">
+										See all messages
+										<i class="icon-arrow-right"></i>
+									</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="light-blue">
+						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small>Welcome,</small>
+									Jason
+								</span>
+
+								<i class="icon-caret-down"></i>
+							</a>
+
+						<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+							<li>
+								<a href="#">
+										<i class="icon-cog"></i>
+										Settings
+									</a>
+							</li>
+
+							<li>
+								<a href="#">
+										<i class="icon-user"></i>
+										Profile
+									</a>
+							</li>
+
+							<li class="divider"></li>
+
+							<li>
+								<a href="#">
+										<i class="icon-off"></i>
+										Logout
+									</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!-- /.ace-nav -->
+			</div>
+			<!-- /.navbar-header -->
+		</div>
+		<!-- /.container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+		</script>
+
+		<div class="main-container-inner">
+			<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+			<div class="sidebar" id="sidebar" style="width:10%">
+				<script type="text/javascript">
+					try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+								<i class="icon-signal"></i>
+							</button>
+
+						<button class="btn btn-info">
+								<i class="icon-pencil"></i>
+							</button>
+
+						<button class="btn btn-warning">
+								<i class="icon-group"></i>
+							</button>
+
+						<button class="btn btn-danger">
+								<i class="icon-cogs"></i>
+							</button>
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div>
+				<!-- #sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li>
+						<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> 控制台 </span>
+							</a>
+					</li>
+
+					<li>
+						<a href="typography.html">
+								<i class="icon-text-width"></i>
+								<span class="menu-text"> 文字排版 </span>
+							</a>
+					</li>
+
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text"> UI 组件 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+						<ul class="submenu">
+							<li class="active">
+								<a href="elements.html">
+										<i class="icon-double-angle-right"></i>
+										组件
+									</a>
+							</li>
+
+							<li>
+								<a href="buttons.html">
+										<i class="icon-double-angle-right"></i>
+										按钮 &amp; 图表
+									</a>
+							</li>
+
+							<li>
+								<a href="treeview.html">
+										<i class="icon-double-angle-right"></i>
+										树菜单
+									</a>
+							</li>
+
+							<li>
+								<a href="jquery-ui.html">
+										<i class="icon-double-angle-right"></i>
+										jQuery UI
+									</a>
+							</li>
+
+							<li>
+								<a href="nestable-list.html">
+										<i class="icon-double-angle-right"></i>
+										可拖拽列表
+									</a>
+							</li>
+
+							<li>
+								<a href="#" class="dropdown-toggle">
+										<i class="icon-double-angle-right"></i>
+
+										三级菜单
+										<b class="arrow icon-angle-down"></b>
+									</a>
+
+								<ul class="submenu">
+									<li>
+										<a href="#">
+												<i class="icon-leaf"></i>
+												第一级
+											</a>
+									</li>
+
+									<li>
+										<a href="#" class="dropdown-toggle">
+												<i class="icon-pencil"></i>
+
+												第四级
+												<b class="arrow icon-angle-down"></b>
+											</a>
+
+										<ul class="submenu">
+											<li>
+												<a href="#">
+														<i class="icon-plus"></i>
+														添加产品
+													</a>
+											</li>
+
+											<li>
+												<a href="#">
+														<i class="icon-eye-open"></i>
+														查看商品
+													</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!-- /.nav-list -->
+
+				<!--<div class="sidebar-collapse" id="sidebar-collapse">
+						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+					</div>
+
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+					</script>-->
+			</div>
+
+
+			<!---->
+				<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">Home</a>
+							</li>
+
+							<li>
+								<a href="#">菜单</a>
+							</li>
+							<li>
+								<a href="#">数据列表</a>
+							</li>
+							<li class="active">添加列表</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+			<div style="float:left; width:90%; padding:0 20px;">
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+					<legend>添加列表</legend>
+				</fieldset>
+
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">单行输入框</label>
+						<div class="layui-input-block">
+							<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">验证必填项</label>
+						<div class="layui-input-block">
+							<input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">验证手机</label>
+						<div class="layui-input-inline">
+							<input type="tel" name="phone" lay-verify="phone" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">验证邮箱</label>
+						<div class="layui-input-inline">
+							<input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">验证数字</label>
+							<div class="layui-input-inline">
+								<input type="number" name="number" lay-verify="number" autocomplete="off" class="layui-input">
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">验证日期</label>
+							<div class="layui-input-block">
+								<input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input"
+								 onclick="layui.laydate({elem: this})">
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">验证链接</label>
+							<div class="layui-input-block">
+								<input type="tel" name="url" lay-verify="url" autocomplete="off" class="layui-input">
+							</div>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">验证身份证</label>
+						<div class="layui-input-block">
+							<input type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">自定义验证</label>
+						<div class="layui-input-inline">
+							<input type="password" name="password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
+					</div>
+
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">范围</label>
+							<div class="layui-input-inline" style="width: 100px;">
+								<input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-form-mid">-</div>
+							<div class="layui-input-inline" style="width: 100px;">
+								<input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">单行选择框</label>
+						<div class="layui-input-block">
+							<select name="interest" lay-filter="aihao">
+							<option value=""></option>
+							<option value="0">写作</option>
+							<option value="1" selected="">阅读</option>
+							<option value="2">游戏</option>
+							<option value="3">音乐</option>
+							<option value="4">旅行</option>
+						</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">分组选择框</label>
+						<div class="layui-input-inline">
+							<select name="quiz">
+							<option value="">请选择问题</option>
+							<optgroup label="城市记忆">
+								<option value="你工作的第一个城市">你工作的第一个城市</option>
+							</optgroup>
+							<optgroup label="学生时代">
+								<option value="你的工号">你的工号</option>
+								<option value="你最喜欢的老师">你最喜欢的老师</option>
+							</optgroup>
+						</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">行内选择框</label>
+						<div class="layui-input-inline">
+							<select name="quiz1">
+							<option value="">请选择省</option>
+							<option value="浙江" selected="">浙江省</option>
+							<option value="你的工号">江西省</option>
+							<option value="你最喜欢的老师">福建省</option>
+						</select>
+						</div>
+						<div class="layui-input-inline">
+							<select name="quiz2">
+							<option value="">请选择市</option>
+							<option value="杭州">杭州</option>
+							<option value="宁波" disabled="">宁波</option>
+							<option value="温州">温州</option>
+							<option value="温州">台州</option>
+							<option value="温州">绍兴</option>
+						</select>
+						</div>
+						<div class="layui-input-inline">
+							<select name="quiz3">
+							<option value="">请选择县/区</option>
+							<option value="西湖区">西湖区</option>
+							<option value="余杭区">余杭区</option>
+							<option value="拱墅区">临安市</option>
+						</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label">普通文本域</label>
+						<div class="layui-input-block">
+							<textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+						</div>
+					</div>
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label">编辑器</label>
+						<div class="layui-input-block">
+							<textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+							<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+		<!-- /.main-container-inner -->
+
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+	</div>
+	<!-- /.main-container -->
+
+	<!-- basic scripts -->
+
+	<!--[if !IE]> -->
+
+	<script src="assets/js/jquery.min.js"></script>
+
+	<style>
+		.layui-form-label {
+			float: left;
+			display: block;
+			padding: 9px 15px;
+			width: 110px!important;
+			font-weight: 400;
+			text-align: right;
+		}
+input[readonly] {
+    background: #fff!important;
+    cursor: default;
+}
+	</style>
+
+	<script type="text/javascript">
+					window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+	</script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+	<script type="text/javascript">
+		if ("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+	</script>
+	<script src="./plugins/layui/layui.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/typeahead-bs2.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+
+	<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+
+	<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="assets/js/bootbox.min.js"></script>
+	<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
+	<script src="assets/js/jquery.gritter.min.js"></script>
+	<script src="assets/js/spin.min.js"></script>
+
+
+	<!-- ace scripts -->
+
+	<script src="assets/js/ace-elements.min.js"></script>
+	<script src="assets/js/ace.min.js"></script>
+
+	<!-- inline scripts related to this page -->
+
+	<script type="text/javascript">
+		jQuery(function ($) {
+			/**
+			$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+			  console.log(e.target.getAttribute("href"));
+			})
+			*/
+
+
+			$('#accordion-style').on('click', function (ev) {
+				var target = $('input', ev.target);
+				var which = parseInt(target.val());
+				if (which == 2) $('#accordion').addClass('accordion-style2');
+				else $('#accordion').removeClass('accordion-style2');
+			});
+
+
+			var oldie = /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase());
+			$('.easy-pie-chart.percentage').each(function () {
+				$(this).easyPieChart({
+					barColor: $(this).data('color'),
+					trackColor: '#EEEEEE',
+					scaleColor: false,
+					lineCap: 'butt',
+					lineWidth: 8,
+					animate: oldie ? false : 1000,
+					size: 75
+				}).css('color', $(this).data('color'));
+			});
+
+			$('[data-rel=tooltip]').tooltip();
+			$('[data-rel=popover]').popover({ html: true });
+
+
+			$('#gritter-regular').on(ace.click_event, function () {
+				$.gritter.add({
+					title: 'This is a regular notice!',
+					text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="blue">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+					image: $path_assets + '/avatars/avatar1.png',
+					sticky: false,
+					time: '',
+					class_name: (!$('#gritter-light').get(0).checked ? 'gritter-light' : '')
+				});
+
+				return false;
+			});
+
+			$('#gritter-sticky').on(ace.click_event, function () {
+				var unique_id = $.gritter.add({
+					title: 'This is a sticky notice!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+					image: $path_assets + '/avatars/avatar.png',
+					sticky: true,
+					time: '',
+					class_name: 'gritter-info' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+				});
+
+				return false;
+			});
+
+
+			$('#gritter-without-image').on(ace.click_event, function () {
+				$.gritter.add({
+					// (string | mandatory) the heading of the notification
+					title: 'This is a notice without an image!',
+					// (string | mandatory) the text inside the notification
+					text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="orange">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+					class_name: 'gritter-success' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+				});
+
+				return false;
+			});
+
+
+			$('#gritter-max3').on(ace.click_event, function () {
+				$.gritter.add({
+					title: 'This is a notice with a max of 3 on screen at one time!',
+					text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="green">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+					image: $path_assets + '/avatars/avatar3.png',
+					sticky: false,
+					before_open: function () {
+						if ($('.gritter-item-wrapper').length >= 3) {
+							return false;
+						}
+					},
+					class_name: 'gritter-warning' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+				});
+
+				return false;
+			});
+
+
+			$('#gritter-center').on(ace.click_event, function () {
+				$.gritter.add({
+					title: 'This is a centered notification',
+					text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+					class_name: 'gritter-info gritter-center' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+				});
+
+				return false;
+			});
+
+			$('#gritter-error').on(ace.click_event, function () {
+				$.gritter.add({
+					title: 'This is a warning notification',
+					text: 'Just add a "gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+					class_name: 'gritter-error' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+				});
+
+				return false;
+			});
+
+
+			$("#gritter-remove").on(ace.click_event, function () {
+				$.gritter.removeAll();
+				return false;
+			});
+
+
+			///////
+
+
+			$("#bootbox-regular").on(ace.click_event, function () {
+				bootbox.prompt("What is your name?", function (result) {
+					if (result === null) {
+						//Example.show("Prompt dismissed");
+					} else {
+						//Example.show("Hi <b>"+result+"</b>");
+					}
+				});
+			});
+
+			$("#bootbox-confirm").on(ace.click_event, function () {
+				bootbox.confirm("Are you sure?", function (result) {
+					if (result) {
+						//
+					}
+				});
+			});
+
+			$("#bootbox-options").on(ace.click_event, function () {
+				bootbox.dialog({
+					message: "<span class='bigger-110'>I am a custom dialog with smaller buttons</span>",
+					buttons:
+					{
+						"success":
+						{
+							"label": "<i class='icon-ok'></i> Success!",
+							"className": "btn-sm btn-success",
+							"callback": function () {
+								//Example.show("great success");
+							}
+						},
+						"danger":
+						{
+							"label": "Danger!",
+							"className": "btn-sm btn-danger",
+							"callback": function () {
+								//Example.show("uh oh, look out!");
+							}
+						},
+						"click":
+						{
+							"label": "Click ME!",
+							"className": "btn-sm btn-primary",
+							"callback": function () {
+								//Example.show("Primary button");
+							}
+						},
+						"button":
+						{
+							"label": "Just a button...",
+							"className": "btn-sm"
+						}
+					}
+				});
+			});
+
+
+
+			$('#spinner-opts small').css({ display: 'inline-block', width: '60px' })
+
+			var slide_styles = ['', 'green', 'red', 'purple', 'orange', 'dark'];
+			var ii = 0;
+			$("#spinner-opts input[type=text]").each(function () {
+				var $this = $(this);
+				$this.hide().after('<span />');
+				$this.next().addClass('ui-slider-small').
+					addClass("inline ui-slider-" + slide_styles[ii++ % slide_styles.length]).
+					css({ 'width': '125px' }).slider({
+						value: parseInt($this.val()),
+						range: "min",
+						animate: true,
+						min: parseInt($this.data('min')),
+						max: parseInt($this.data('max')),
+						step: parseFloat($this.data('step')),
+						slide: function (event, ui) {
+							$this.attr('value', ui.value);
+							spinner_update();
+						}
+					});
+			});
+
+
+
+
+
+			$.fn.spin = function (opts) {
+				this.each(function () {
+					var $this = $(this),
+						data = $this.data();
+
+					if (data.spinner) {
+						data.spinner.stop();
+						delete data.spinner;
+					}
+					if (opts !== false) {
+						data.spinner = new Spinner($.extend({ color: $this.css('color') }, opts)).spin(this);
+					}
+				});
+				return this;
+			};
+
+			function spinner_update() {
+				var opts = {};
+				$('#spinner-opts input[type=text]').each(function () {
+					opts[this.name] = parseFloat(this.value);
+				});
+				$('#spinner-preview').spin(opts);
+			}
+
+
+
+			$('#id-pills-stacked').removeAttr('checked').on('click', function () {
+				$('.nav-pills').toggleClass('nav-stacked');
+			});
+
+
+
+
+		});
+	</script>
+	<script>
+		layui.use(['form', 'layedit', 'laydate'], function () {
+			var form = layui.form(),
+				layer = layui.layer,
+				layedit = layui.layedit,
+				laydate = layui.laydate;
+
+			//创建一个编辑器
+			var editIndex = layedit.build('LAY_demo_editor');
+			//自定义验证规则
+			form.verify({
+				title: function (value) {
+					if (value.length < 5) {
+						return '标题至少得5个字符啊';
+					}
+				},
+				pass: [/(.+){6,12}$/, '密码必须6到12位'],
+				content: function (value) {
+					layedit.sync(editIndex);
+				}
+			});
+
+			//监听提交
+			form.on('submit(demo1)', function (data) {
+				alert(123);
+				layer.alert(JSON.stringify(data.field), {
+					title: '最终的提交信息'
+				})
+				return false;
+			});
+		});
+	</script>
+</body>
+
+</html>
